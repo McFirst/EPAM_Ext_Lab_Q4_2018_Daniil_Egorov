@@ -1,4 +1,13 @@
-﻿using System.Reflection;
+﻿//-----------------------------------------------------------------------
+// <copyright file="AssemblyInfo.cs" company="Sprocket Enterprises">
+//     Copyright (c) Sprocket Enterprises. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
+
+/// <summary>
+/// description AssemblyInfo
+/// </summary>
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 

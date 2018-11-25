@@ -120,14 +120,23 @@
   <data name="Add" xml:space="preserve">
     <value>+</value>
   </data>
+  <data name="Divi" xml:space="preserve">
+    <value>/</value>
+  </data>
   <data name="History" xml:space="preserve">
     <value>History</value>
+  </data>
+  <data name="Mult" xml:space="preserve">
+    <value>*</value>
   </data>
   <data name="OpName" xml:space="preserve">
     <value>Operation</value>
   </data>
   <data name="Result" xml:space="preserve">
-    <value>Sum</value>
+    <value>Output</value>
+  </data>
+  <data name="Sub" xml:space="preserve">
+    <value>-</value>
   </data>
   <data name="x" xml:space="preserve">
     <value>X</value>

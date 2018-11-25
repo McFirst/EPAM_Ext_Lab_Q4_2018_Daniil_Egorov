@@ -1,11 +1,28 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿//-----------------------------------------------------------------------
+// <copyright file="BundleConfig.cs" company="Sprocket Enterprises">
+//     Copyright (c) Sprocket Enterprises. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 
+/// <summary>
+/// description My_Calc
+/// </summary>
 namespace My_Calc
 {
+    using System.Web;
+    using System.Web.Optimization;
+
+    /// <summary>
+    /// description class BundleConfig
+    /// </summary>
     public class BundleConfig
     {
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
+
+        /// <summary>
+        /// description RegisterBundles
+        /// </summary>
+        /// <param name="bundles"> Bundling and minification are two techniques </param>
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
