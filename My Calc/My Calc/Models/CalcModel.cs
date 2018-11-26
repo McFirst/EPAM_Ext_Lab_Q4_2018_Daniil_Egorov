@@ -35,7 +35,7 @@ namespace My_Calc.Models
         /// <summary>
         /// Gets or sets Y
         /// </summary>
-        public int Y { get; set; }
+        public double Y { get; set; }
 
         [Display(Name = "Result", ResourceType = typeof(CalcResources))]
 

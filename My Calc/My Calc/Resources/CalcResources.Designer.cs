@@ -70,6 +70,15 @@ namespace My_Calc.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Division by 0.
+        /// </summary>
+        public static string div0 {
+            get {
+                return ResourceManager.GetString("div0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на /.
         /// </summary>
         public static string Divi {

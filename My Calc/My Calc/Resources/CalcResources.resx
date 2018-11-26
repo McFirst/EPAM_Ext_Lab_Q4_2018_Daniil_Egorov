@@ -120,6 +120,9 @@
   <data name="Add" xml:space="preserve">
     <value>+</value>
   </data>
+  <data name="div0" xml:space="preserve">
+    <value>Division by 0</value>
+  </data>
   <data name="Divi" xml:space="preserve">
     <value>/</value>
   </data>

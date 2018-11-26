@@ -39,6 +39,11 @@ namespace My_Calc.Controllers
         private const string DefaultResult = "No data";
 
         /// <summary>
+        /// format datetime
+        /// </summary>
+        private const string formatdate = "dd MMMM yyyy | HH:mm:ss";
+
+        /// <summary>
         /// Gets or sets list of Results
         /// </summary>
         public static List<string> Results { get; protected set; } = new List<string>();
@@ -88,22 +93,16 @@ namespace My_Calc.Controllers
                     }
                     else
                     {
-                        strerr = "Division by 0";//todo pn строку в ресурсы
+                        strerr = CalcResources.div0;//перенес строку в ресурсы
                     }
 
                     break;
             }
 
-            string s = DateTime.Now.ToString("dd MMMM yyyy | HH:mm:ss");//todo pn такое лучше в константы выносить. Немнемоничное название переменной.
+            string datenow = DateTime.Now.ToString(formatdate);//формат даты в константах. Нормальное название переменной.
 
-            if (strerr == null)
-            {
-                model.Result = string.Format("{0} | {1} {3} {2} = {4}\n", s, CalcResources.x, CalcResources.y, model.Op.DisplayName(), result);//todo pn здесь и ниже дублирование строк и кода
-            }
-            else
-            {
-                model.Result = string.Format("{0} | {1} {3} {2} = {4}\n", s, CalcResources.x, CalcResources.y, model.Op.DisplayName(), strerr);
-            }
+            model.Result = string.Format("{0} | {1} {3} {2} = {4}\n", datenow, CalcResources.x, CalcResources.y, model.Op.DisplayName(), strerr ?? result.ToString());//подставил оператор объединения
+            
 
             Results.Add(model.Result);
 
