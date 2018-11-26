@@ -88,17 +88,17 @@ namespace My_Calc.Controllers
                     }
                     else
                     {
-                        strerr = "Division by 0";
+                        strerr = "Division by 0";//todo pn строку в ресурсы
                     }
 
                     break;
             }
 
-            string s = DateTime.Now.ToString("dd MMMM yyyy | HH:mm:ss");
+            string s = DateTime.Now.ToString("dd MMMM yyyy | HH:mm:ss");//todo pn такое лучше в константы выносить. Немнемоничное название переменной.
 
             if (strerr == null)
             {
-                model.Result = string.Format("{0} | {1} {3} {2} = {4}\n", s, CalcResources.x, CalcResources.y, model.Op.DisplayName(), result);
+                model.Result = string.Format("{0} | {1} {3} {2} = {4}\n", s, CalcResources.x, CalcResources.y, model.Op.DisplayName(), result);//todo pn здесь и ниже дублирование строк и кода
             }
             else
             {
