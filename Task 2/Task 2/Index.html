@@ -5,9 +5,9 @@
     <title>Task 2 Daniil Egorov</title>
 
     <link rel="stylesheet" type="text/css" href="css/mystyle.css" />
-    <!--
-    <script type="text/javascript" src="scripts/script.js"></script>
-        -->
+    
+    <script type="text/javascript" src="js/myscript.js"></script>
+        
 </head>
 <body>
     <!-- <input type="button" id="buttonClickMe" value="Click" title="Click me" onclick="hello('Hi!')">
@@ -28,16 +28,20 @@
             <a href="/" class="logo">LOGO</a>
             <nav>
                 <ul>
-                    <li><a href="">Главная</a></li>
-                    <li><a href="">О нас</a></li>
-                    <li><a href="">Контакты</a></li>
+                    <li><a href="" onclick="setpage('regform.html'); return false">Регистрация</a></li>
+                    <li><a href="" onclick="setpage('loginform.html'); return false">Авторизация</a></li>
+                    <li><a href="" onclick="setpage('tableform.html'); return false">Таблица</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <div class="main">
-        <div class="container"></div>
+        <div class="container">
+            <iframe id="framepage" src="" width=100% height=100% align="left">
+                Ваш браузер не поддерживает плавающие фреймы!
+            </iframe>
+        </div>
     </div>
 
     <footer>

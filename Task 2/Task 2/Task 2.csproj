@@ -68,9 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\mystyle.css" />
+    <Content Include="css\table.css" />
     <Content Include="Index.html" />
+    <Content Include="js\myscript.js" />
     <Content Include="loginform.html" />
     <Content Include="regform.html" />
+    <Content Include="tableform.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -85,7 +88,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="imgs\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

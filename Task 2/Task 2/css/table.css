@@ -1,0 +1,109 @@
+﻿body {
+}
+
+.container {
+    width: 100%;
+    max-width: 1024px;
+    padding: 0 15px;
+    margin: 0 auto;
+    //background: #FFD0AB;
+    height: 100%;
+    
+    //width: 400px;
+    position: relative;
+    //margin: 10px auto;
+    //padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+}
+
+.ImgTable {
+    height: 20px;
+    width: 20px;
+}
+
+.ImgClose {
+    height: 25%;
+    width: 25%;
+    position: relative;
+}
+
+
+
+    .container:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+.divTable {
+    display: table;
+    width: 100%;
+    //float: right;
+}
+
+.divTableRow {
+    display: table-row;
+}
+
+.divTableCell, .divTableHead {
+    border: 1px solid #999999;
+    display: table-cell;
+    padding: 3px 10px;
+}
+
+.divTableFoot {
+    background-color: #EEE;
+    //display: table-footer-group;
+    font-weight: bold;
+}
+
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    display: none;
+}
+
+    .modalDialog:target {
+        display: block;
+        pointer-events: auto;
+    }
+
+    .modalDialog > div {
+        width: 400px;
+        position: relative;
+        margin: 10px auto;
+        padding: 5px 20px 13px 20px;
+        border-radius: 10px;
+        background: #fff;
+        background: -moz-linear-gradient(#fff, #999);
+        background: -webkit-linear-gradient(#fff, #999);
+        background: -o-linear-gradient(#fff, #999);
+    }
+
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 12px;
+    box-shadow: 1px 1px 3px #000;
+}
+
+    .close:hover {
+        background: #00d9ff;
+    }

@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/table.css" />
+</head>
+<body>
+    <div class="container">
+    <div class="divTable"> Список пользователей
+            <div class="divTableRow">
+                <div class="divTableCell">Имя</div>
+                <div class="divTableCell">Почта</div>
+                <div class="divTableCell">Логин</div>
+                <div class="divTableCell">День рождения</div>
+                <div class="divTableCell">&nbsp;</div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">Ивано Иван</div>
+                <div class="divTableCell">ivaniv@ivan.ru</div>
+                <div class="divTableCell">ivanov</div>
+                <div class="divTableCell">01.01.1991</div>
+                <div class="divTableCell">
+                    <a href="#ModalRead"><img src="imgs/read.png" class="ImgTable"></a>
+                    <a href="#ModalWrite"><img src="imgs/write.png" class="ImgTable"></a>
+                </div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">Петров Петр</div>
+                <div class="divTableCell">petrov@petr.ru</div>
+                <div class="divTableCell">petrov</div>
+                <div class="divTableCell">01.01.1991</div>
+                <div class="divTableCell">
+                    <a href="#ModalRead"><img src="imgs/read.png" class="ImgTable"></a>
+                    <a href="#ModalWrite"><img src="imgs/write.png" class="ImgTable"></a>
+                </div>
+            </div>
+    </div>
+    </div>
+
+    <!-- Модальное окно с текстом -->
+    <div id="ModalRead" class="modalDialog">
+    <div>
+        <a href="#close" title="Закрыть" class="close">X</a>
+        <h2>Окно с текстом</h2>
+        <p>Некоторый набор текста.</p>
+        <p>Его Его нельзя редактировать.</p>
+        <a href="#close" title="Закрыть" ><img src="imgs/close.png" class="ImgClose"></a>
+    </div>
+    </div>
+
+        <!-- Модальное окно с редактированием -->
+    <div id="ModalWrite" class="modalDialog">
+    <div>
+        <a href="#close" title="Закрыть" class="close">X</a>
+        <h2>Окно с редактором</h2>
+        <p><input name="reglogin" required placeholder="Укажите Login" type="text" size="40"></p>
+        <p><input name="regname" required placeholder="Введите свое имя" type="text" size="20">
+        <input name="regsurname" required placeholder="Введите свою Фамилию" type="text" size="20"></p>
+        <p><input name="regmail" required placeholder="Укажите адрес электронной почты" type="email" size="40"></p>
+        <p><input name="regpass" required placeholder="Придумайте пароль" type="password" size="40"></p>
+        <p><input name="regname" required type="date" size="40"></p>
+        <p><input type="submit" ></p>
+        <a href="#close" title="Закрыть" ><img src="imgs/close.png" class="ImgClose"></a>
+    </div>
+</div>
+
+
+    <!--
+    <div id="head"> Шапка сайта </div>
+    <div id="left-column"> Левая колонка </div>
+    <div id="right-column"> Правая колонка </div>
+    <div id="center-column"> Центральная колонка </div>
+    <div id="footer"> Подвал сайта </div>
+    -->
+</body>
+</html>
