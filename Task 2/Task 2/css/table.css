@@ -3,21 +3,11 @@
 
 .container {
     width: 100%;
-    max-width: 1024px;
+    max-width: 900px;
     padding: 0 15px;
     margin: 0 auto;
-    //background: #FFD0AB;
     height: 100%;
-    
-    //width: 400px;
     position: relative;
-    //margin: 10px auto;
-    //padding: 5px 20px 13px 20px;
-    border-radius: 10px;
-    background: #fff;
-    background: -moz-linear-gradient(#fff, #999);
-    background: -webkit-linear-gradient(#fff, #999);
-    background: -o-linear-gradient(#fff, #999);
 }
 
 .ImgTable {
@@ -30,14 +20,6 @@
     width: 25%;
     position: relative;
 }
-
-
-
-    .container:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
 
 .divTable {
     display: table;

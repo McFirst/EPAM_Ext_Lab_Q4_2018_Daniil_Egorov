@@ -2,55 +2,63 @@
     margin: 0;
 }
 
-header {
-    background: #B0DDDD;
-    height: 70px;
+.header {
+    height: 40px; /* Высота слоя */
+    background: #FEDFC0;
+    border-bottom: 2px solid #7B5427;
 }
 
-.main {
-    background: #F9F9F9;
-    height: 300px;
-}
-
-footer {
-    background: #DCCEC8;
-    height: 70px;
-}
-
-.container {
+.left {
     width: 100%;
-    max-width: 1024px;
-    padding: 0 15px;
-    margin: 0 auto;
-    background: #FFD0AB;
-    height: 100%;
+    background: #ECF5E4;
+    border-right: 1px solid #231F20;
+    top: 10%; /* Расстояние от верхнего края */
+    bottom: 0; /* Расстояние снизу  */
+    position: absolute;
+    overflow: auto;
+    padding: 10px;
 }
 
-    .container:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+.content {
+    top: 10%; /* Расстояние от верхнего края */
+    left: 170px; /* Расстояние от левого края */
+    bottom: 0;
+    right: 10%;
+    position: absolute;
+    overflow: auto;
+    padding: 10px;
+}
 
-.logo {
+.left {
+    width: 100%;
+    background: #ECF5E4;
+    border-right: 1px solid #231F20;
+    top: 10%; /* Расстояние от верхнего края */
+    bottom: 0; /* Расстояние снизу  */
+    position: absolute;
+    overflow: auto;
+    padding: 10px;
+}
+
+.navmen {
     float: left;
 }
 
-nav {
-    float: right;
-}
-
-    nav ul {
-        margin: 0;
+    .navmen ul {
+        margin: 5px;
         padding: 0;
         list-style: none;
     }
 
-    nav li {
-        display: inline-block; /*один из способов разместить элементы в строку*/
+    .navmen li {
+        display: inline-block;
     }
 
-    nav a {
+    .navmen a {
         text-decoration: none;
         line-height: 38px;
     }
+
+.none {
+    max-width:400px;
+}
