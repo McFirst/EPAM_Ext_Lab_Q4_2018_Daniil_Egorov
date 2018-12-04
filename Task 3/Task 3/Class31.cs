@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using System.Diagnostics;
-using System.Threading;
-
-namespace Task_3
+﻿namespace Task_3
 {
-    //ввод целочисленного числа
-    class Class30
+    using System;
+    using System.Diagnostics;
+    using System.IO;
+    using System.Text;
+
+    /// <summary>
+    /// ввод целочисленного числа
+    /// </summary>
+    public class Class30
     {
         public double Readint(string str, double defaultval, double maxval)
         {
@@ -26,7 +26,7 @@ namespace Task_3
                 if (char.IsDigit(input))
                 {
                     Console.Write(input);
-                    result = result * 10 + Char.GetNumericValue(input);
+                    result = (result * 10) + char.GetNumericValue(input);
                     oncein = true;
                 }
             }
@@ -39,16 +39,22 @@ namespace Task_3
                 if (result == 0 | overmax)
                 {
                     Console.WriteLine("Ошибка! Значение не может быть равно {0}. Введите еще раз!", result);
-                    result = Readint(str, defaultval, maxval);
+                    result = this.Readint(str, defaultval, maxval);
                 }
+
                 return result;
             }
-            else { return defaultval; }
+            else
+            {
+                return defaultval;
+            }
         }
     }
 
-    //задание 1
-    class Class31 : Class30
+    /// <summary>
+    /// задание 1
+    /// </summary>
+    public class Class31 : Class30
     {
         public double Square(double a1, double b1)
         {
@@ -57,12 +63,14 @@ namespace Task_3
         }
     }
 
-    //задание 2
-    class Class32 : Class30
+    /// <summary>
+    /// задание 2
+    /// </summary>
+    public class Class32 : Class30
     {
         public void Hierarchy(double countrow)
         {
-            var sb = new StringBuilder("");
+            var sb = new StringBuilder(string.Empty);
             for (int i = 0; i < countrow; i++)
             {
                 sb.Append("*");
@@ -71,16 +79,19 @@ namespace Task_3
         }
     }
 
-    //задание 3
-    class Class33 : Class30
+    /// <summary>
+    /// задание 3
+    /// </summary>
+    public class Class33 : Class30
     {
         public void Pipyramid(double countrow, double indent)
         {
-            var sb = new StringBuilder("");
+            var sb = new StringBuilder(string.Empty);
             for (int i = 1; i < countrow + indent; i++)
             {
                 sb.Append(" ");
             }
+
             sb.Append("*");
             for (int i = 0; i < countrow; i++)
             {
@@ -90,61 +101,64 @@ namespace Task_3
         }
     }
 
-    //задание 4
-    class Class34 : Class33
+    /// <summary>
+    /// задание 4
+    /// </summary>
+    public class Class34 : Class33
     {
         public void Еriangle(double countta)
         {
             for (int i = 1; i < countta; i++)
             {
-                Pipyramid(i, countta - i);
+                this.Pipyramid(i, countta - i);
             }
         }
     }
 
-    //задание 5
-    class Class35 : Class30
+    /// <summary>
+    /// задание 5
+    /// </summary>
+    public class Class35 : Class30
     {
         public double Sumnum(double maxnum, double divider1, double divider2)
         {
             double result = 0;
             for (int i = 1; i < maxnum + 1; i++)
             {
-                //Console.Write("первое {0}%{1}={2}   ", i, divider1, i % divider1);
-                //Console.WriteLine("второе {0}%{1}={2}   ", i, divider2, i % divider2);
                 if ((i % divider1 == 0) | (i % divider2 == 0))
                 {
                     Console.Write("{0}, ", i);
                     result = result + i;
                 }
             }
+
             Console.WriteLine();
             return result;
-
         }
     }
 
-    //задание 6
-    class Class36 : Class30
+    /// <summary>
+    /// задание 6
+    /// </summary>
+    public class Class36 : Class30
     {
-        private bool[] Status = new bool[] { false, false, false };
-        private string[] Fonttype = new string[] { "bold", "italic", "underline" };
+        private bool[] status = new bool[] { false, false, false };
+        private string[] fonttype = new string[] { "bold", "italic", "underline" };
 
         public void Font()
         {
-            var fontres = new StringBuilder("");
+            var fontres = new StringBuilder(string.Empty);
             for (int i = 0; i < 3; i++)
             {
-                //отображение текущего формата перед началом выбора
-                fontres.Append((Status[i] ? (Fonttype[i] + " ") : ""));
+                ///отображение текущего формата перед началом выбора
+                fontres.Append(this.status[i] ? (this.fonttype[i] + " ") : string.Empty);
             }
-            Console.WriteLine("Параметры текста: {0}", ((fontres.ToString() == "") ? "None" : fontres.ToString()));
+
+            Console.WriteLine("Параметры текста: {0}", (fontres.ToString() == string.Empty) ? "None" : fontres.ToString());
             Console.WriteLine("Парметры: \n" +
                 "          1: bold \n" +
                 "          2: italic \n" +
                 "          3: underline");
-            //int numpar = Convert.ToInt32(Math.Floor(Readint("Введите номер параметра: ",0, 3)));
-
             double result = 1;
             Console.Write("Введите номер параметра [1]: ");
             bool iscont = true;
@@ -153,35 +167,36 @@ namespace Task_3
             {
                 ConsoleKeyInfo keyPress = Console.ReadKey(true);
                 input = keyPress.KeyChar;
-                //ограничение на управлющие Enter и ESC
+                ///ограничение на управлющие Enter и ESC
                 iscont = ((input == (char)13) | input == '\u001b') ? true : false;
 
                 if (char.IsDigit(input))
                 {
-                    //вводим только 1 2 3, остальное игнорируем
-                    if ((Char.GetNumericValue(input)) > 0 & (Char.GetNumericValue(input)) < 4)
+                    ///вводим только 1 2 3, остальное игнорируем
+                    if (char.GetNumericValue(input) > 0 & char.GetNumericValue(input) < 4)
                     {
                         Console.Write(input);
-                        result = Char.GetNumericValue(input);
+                        result = char.GetNumericValue(input);
                     }
                 }
             }
             while (!iscont);
             Console.WriteLine();
 
-            //если ESC то прервать рекрсию
+            ///если ESC то прервать рекрсию
             if (input != '\u001b')
             {
                 int numpar = Convert.ToInt32(Math.Floor(result));
-                Status[numpar - 1] = !Status[numpar - 1];
-                Font();
+                this.status[numpar - 1] = !this.status[numpar - 1];
+                this.Font();
             }
-
         }
     }
 
-    //задание 7 https://ru.wikipedia.org/wiki/Гномья_сортировка
-    class Class37
+    /// <summary>
+    /// задание 7 https://ru.wikipedia.org/wiki/Гномья_сортировка
+    /// </summary>
+    public class Class37
     {
         public void Gnomsort()
         {
@@ -191,6 +206,7 @@ namespace Task_3
             {
                 Console.Write("{0}  ", mass[i] = rand.Next(100));
             }
+
             Console.WriteLine();
 
             int k = 1;
@@ -217,22 +233,20 @@ namespace Task_3
             {
                 Console.Write("{0}  ", i);
             }
+
             Console.WriteLine();
         }
     }
 
-    //задание 8
-    class Class38
+    /// <summary>
+    /// задание 8
+    /// </summary>
+    public class Class38
     {
         public void Mass3d()
         {
             int[,,] mass = new int[4, 3, 2];
             Random rand = new Random();
-
-            //Console.WriteLine("mas.Rank: {0}", mas.Rank);
-            //Console.WriteLine("mas.GetLength(0): {0}", mas.GetLength(0));
-            //Console.WriteLine("mas.GetLength(1): {0}", mas.GetLength(1));
-            //Console.WriteLine("mas.GetLength(2): {0}", mas.GetLength(2));
 
             for (int i = 0; i < mass.GetLength(0); i++)
             {
@@ -258,6 +272,7 @@ namespace Task_3
                             mass[i, j, k] = 0;
                         }
                     }
+
                     Console.WriteLine();
                 }
             }
@@ -272,14 +287,17 @@ namespace Task_3
                     {
                         Console.Write("{0}\t", mass[i, j, k]);
                     }
+
                     Console.WriteLine();
                 }
             }
         }
     }
 
-    //задание 9
-    class Class39
+    /// <summary>
+    /// задание 9
+    /// </summary>
+    public class Class39
     {
         public void Mass1d()
         {
@@ -289,6 +307,7 @@ namespace Task_3
             {
                 Console.Write("{0}  ", mass[i] = rand.Next(-10, 10));
             }
+
             Console.WriteLine();
 
             int result = 0;
@@ -296,12 +315,15 @@ namespace Task_3
             {
                 result += (i > 0) ? i : 0;
             }
+
             Console.WriteLine("Сумма неотрицательныхчисел = {0}", result);
         }
     }
 
-    //задание 10
-    class Class310
+    /// <summary>
+    /// задание 10
+    /// </summary>
+    public class Class310
     {
         public void Mass2d()
         {
@@ -316,14 +338,18 @@ namespace Task_3
                     Console.Write("{0}\t", mass[i, j] = rand.Next(-10, 10));
                     result += ((i + j) % 2 == 0) ? mass[i, j] : 0;
                 }
+
                 Console.WriteLine();
             }
+
             Console.WriteLine("Сумма четных позиций = {0}", result);
         }
     }
 
-    //задание 11
-    class Class311
+    /// <summary>
+    /// задание 11
+    /// </summary>
+    public class Class311
     {
         public void Avaword()
         {
@@ -331,7 +357,7 @@ namespace Task_3
             string defstr = "abc.ab abcd";
             Console.Write("Введите строку [{0}]: ", defstr);
             text = Console.ReadLine();
-            if (text == "")
+            if (text == string.Empty)
             {
                 text = defstr;
             }
@@ -342,9 +368,9 @@ namespace Task_3
 
             foreach (char i in text)
             {
-                if ((char.IsPunctuation(i) | char.IsSeparator(i)))
+                if (char.IsPunctuation(i) | char.IsSeparator(i))
                 {
-                    countword += (separ) ? 0 : 1;
+                    countword += separ ? 0 : 1;
                     separ = true;
                 }
                 else
@@ -353,7 +379,8 @@ namespace Task_3
                     separ = false;
                 }
             }
-            countword += (separ) ? 0 : 1;
+
+            countword += separ ? 0 : 1;
             if (countword == 0)
             {
                 Console.WriteLine("В строке нет ни одного слова!");
@@ -362,12 +389,13 @@ namespace Task_3
             {
                 Console.WriteLine("Средняя Длина слова: {0}", countchar / countword);
             }
-
         }
     }
 
-    //задание 12
-    class Class312
+    /// <summary>
+    /// задание 12
+    /// </summary>
+    public class Class312
     {
         public void Doubletter()
         {
@@ -376,76 +404,75 @@ namespace Task_3
             string text1 = null;
             Console.Write("Введите первую строку [abc.ab cde]: ");
             text1 = Console.ReadLine();
-            text1 = (text1 == "") ? deftxt1 : text1;
+            text1 = (text1 == string.Empty) ? deftxt1 : text1;
             string text2 = null;
             Console.Write("Введите вторую строку bceb: ");
             text2 = Console.ReadLine();
-            text2 = (text2 == "") ? deftxt2 : text2;
+            text2 = (text2 == string.Empty) ? deftxt2 : text2;
 
-            var result = new StringBuilder("");
+            var result = new StringBuilder(string.Empty);
             foreach (char i in text1)
             {
                 result.Append(i.ToString());
-                result.Append((text2.Contains(i)) ? i.ToString() : "");
+                result.Append(text2.Contains(i) ? i.ToString() : string.Empty);
             }
+
             Console.WriteLine("Итог: {0}", result.ToString());
         }
     }
 
-    //задание 13
-    class Class313
+    /// <summary>
+    /// задание 13
+    /// </summary>
+    public class Class313
     {
         public void Сomparison()
         {
             for (int j = 0; j < 1000; j++)
             {
-                string str = "";
+                string str = string.Empty;
                 StringBuilder sb = new StringBuilder();
-                int N = 250000;
+                int n = 250000;
                 Stopwatch swstr = new Stopwatch();
                 Stopwatch swsb = new Stopwatch();
 
-
                 swstr.Start();
-                for (int i = 0; i < N; i++)
+                for (int i = 0; i < n; i++)
                 {
                     str += "*";
                 }
+
                 swstr.Stop();
 
                 swsb.Start();
-                for (int i = 0; i < N; i++)
+                for (int i = 0; i < n; i++)
                 {
                     sb.Append("*");
                 }
+
                 swsb.Stop();
 
-                StringBuilder text = new StringBuilder("");
+                StringBuilder text = new StringBuilder(string.Empty);
                 TimeSpan ts = swstr.Elapsed;
-                string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                ts.Hours, ts.Minutes, ts.Seconds,
-                ts.Milliseconds / 10);
+                string elapsedTime = string.Format("{0:00}:{1:00}:{2:00}.{3:00}", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
                 text.Append(j.ToString() + "\n");
                 text.Append("RunTime String " + elapsedTime + "\n");
-                //Console.WriteLine(text.ToString());
-
+                
                 ts = swsb.Elapsed;
-                elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                ts.Hours, ts.Minutes, ts.Seconds,
-                ts.Milliseconds / 10);
+                elapsedTime = string.Format("{0:00}:{1:00}:{2:00}.{3:00}", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
                 text.Append("RunTime StringBulder " + elapsedTime + "\n" + "\n");
                 Console.Write(text.ToString());
-                //Console.WriteLine("RunTime StringBulder " + elapsedTime);
-                //Console.WriteLine();
-
+                
                 string path = @"D:\work\epam\labs\Task 3\Task 3\13.txt";
                 File.AppendAllText(path, text.ToString());
             }
         }
     }
 
-    //меню
-    class Menu : Class30
+    /// <summary>
+    /// меню
+    /// </summary>
+    public class Menu : Class30
     {
         public void MainMenu()
         {
@@ -453,7 +480,7 @@ namespace Task_3
             ConsoleKeyInfo keyPress = new ConsoleKeyInfo();
             do
             {
-                //menu
+                ///menu
                 Console.Clear();
                 Console.WriteLine("Выберите задание:");
                 Console.WriteLine("\t 1:  Задание 3.1");
@@ -468,7 +495,7 @@ namespace Task_3
                 Console.WriteLine("\t 10: Задание 3.10");
                 Console.WriteLine("\t 11: Задание 3.11");
                 Console.WriteLine("\t 12: Задание 3.12");
-                //Console.WriteLine("\t 13: Задание 3.13");
+                ///Console.WriteLine("\t 13: Задание 3.13");
 
                 if (menuitem == 0)
                 {
@@ -483,11 +510,7 @@ namespace Task_3
                         Console.WriteLine("01. Вычисление площади прямоугольника со сторонами a и b");
                         Console.WriteLine("В поле запроса в скобках отображается значение по умолчанию.");
                         Class31 p1 = new Class31();
-                        //do
-                        //{
                         Console.WriteLine(p1.Square(p1.Readint("Введите сторону a [6]: ", 6, 0), p1.Readint("Введите сторону b [3]: ", 3, 0)));
-                        //    Console.WriteLine("To REPEAT, press 'y', press any key to exit");
-                        //} while ((Console.ReadKey().Key == ConsoleKey.Y));
                         break;
                     case 2:
                         ////второе задание
@@ -562,17 +585,19 @@ namespace Task_3
                         Class312 p12 = new Class312();
                         p12.Doubletter();
                         break;
-                        //case 13:
-                        //    ////12 задание 
-                        //    Class313 p13 = new Class313();
-                        //    p13.Сomparison();
-                        //    break;
+                        ////case 13:
+                        ////    ////12 задание 
+                        ////    Class313 p13 = new Class313();
+                        ////    p13.Сomparison();
+                        ////    break;
                 }
+
                 Console.WriteLine();
                 Console.WriteLine(" To REPEAT  task pess 'r' \n Go to MENU, press 'm' \n press any key to exit");
                 keyPress = Console.ReadKey(true);
                 menuitem = (keyPress.Key == ConsoleKey.R) ? menuitem : 0;
-            } while ((keyPress.Key == ConsoleKey.M) | (keyPress.Key == ConsoleKey.R));
+            }
+            while ((keyPress.Key == ConsoleKey.M) | (keyPress.Key == ConsoleKey.R));
         }
     }
 }
