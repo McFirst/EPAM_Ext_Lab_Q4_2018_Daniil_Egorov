@@ -1,17 +1,83 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Task_4.Material">
-    <Position X="4.75" Y="0.75" Width="1.5" />
+  <Class Name="Task_4.UserClass">
+    <Position X="0.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAgAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
-      <FileName>Material.cs</FileName>
+      <HashCode>IAAAAAAIACAAAAAAEAAAAAQABAAAAAABAAAQAAAAAAA=</HashCode>
+      <FileName>UserClass.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RoleClass" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Task_4.RoleClass">
+    <Position X="3.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAEAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>RoleClass.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UserView" />
+      <Property Name="UserAdmin" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Task_4.MaterialClass">
+    <Position X="5.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAgEgAAIAAAAAAAAAAAAAAAEBCQAAAAACAAA=</HashCode>
+      <FileName>MaterialClass.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TagClass" />
+      <Property Name="RatingClass" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Task_4.RatingClass">
+    <Position X="8" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>RatingClass.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Task_4.Card">
-    <Position X="4.75" Y="3" Width="1.5" />
+  <Class Name="Task_4.TagClass">
+    <Position X="8" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAEAAAAIAAAAAAA=</HashCode>
-      <FileName>Card.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TagClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Task_4.UserView">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserView.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MaterialView" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Task_4.UserAdmin">
+    <Position X="3.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UserAdmin.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MaterialAdmin" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Task_4.MaterialView">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MaterialView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Task_4.MaterialAdmin">
+    <Position X="6" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>MaterialAdmin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
