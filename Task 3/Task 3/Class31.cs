@@ -7,8 +7,7 @@
     {
         public double Square(double a1, double b1)
         {
-            double x = a1 * b1;//todo pn зачем лишняя строка?
-            return x;
+            return a1 * b1;
         }
     }
 }

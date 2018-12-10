@@ -20,13 +20,13 @@
                 fontres.Append(this.status[i] ? (this.fonttype[i] + " ") : string.Empty);
             }
 
-            Console.WriteLine("Параметры текста: {0}", (fontres.ToString() == string.Empty) ? "None" : fontres.ToString());
-            Console.WriteLine("Парметры: \n" +
+            Console.WriteLine("Text options: {0}", (fontres.ToString() == string.Empty) ? "None" : fontres.ToString());
+            Console.WriteLine("Options: \n" +
                 "          1: bold \n" +
                 "          2: italic \n" +
                 "          3: underline");
             double result = 1;
-            Console.Write("Введите номер параметра [1]: ");
+            Console.Write("Enter parameter number [1]: ");
             bool iscont = true;
             char input;
             do
@@ -34,7 +34,7 @@
                 ConsoleKeyInfo keyPress = Console.ReadKey(true);
                 input = keyPress.KeyChar;
                 ///ограничение на управлющие Enter и ESC
-                iscont = ((input == (char)13) | input == '\u001b') ? true : false;//todo pn хардкод
+                iscont = ((input == (char)13) | input == (char)27) ? true : false;
 
                 if (char.IsDigit(input))
                 {
@@ -50,7 +50,7 @@
             Console.WriteLine();
 
             ///если ESC то прервать рекрсию
-            if (input != '\u001b')//todo pn хардкод
+            if (input != (char)27)
             {
                 int numpar = Convert.ToInt32(Math.Floor(result));
                 this.status[numpar - 1] = !this.status[numpar - 1];

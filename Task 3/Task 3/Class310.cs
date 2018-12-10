@@ -9,6 +9,8 @@
     {
         public void Mass2d()
         {
+            int randmin = -10;
+            int randmax = 10;
             int[,] mass = new int[5, 4];
             Random rand = new Random();
             int result = 0;
@@ -17,14 +19,14 @@
             {
                 for (int j = 0; j < mass.GetLength(1); j++)
                 {
-                    Console.Write("{0}\t", mass[i, j] = rand.Next(-10, 10));//todo pn сильная связность
+                    Console.Write("{0}\t", mass[i, j] = rand.Next(randmin, randmax));
                     result += ((i + j) % 2 == 0) ? mass[i, j] : 0;
                 }
 
                 Console.WriteLine();
             }
 
-            Console.WriteLine("Сумма четных позиций = {0}", result);
+            Console.WriteLine("Sum of even positions = {0}", result);
         }
     }
 }

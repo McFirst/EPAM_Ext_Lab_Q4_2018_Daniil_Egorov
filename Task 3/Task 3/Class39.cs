@@ -9,11 +9,13 @@
     {
         public void Mass1d()
         {
+            int randmin = -10;
+            int randmax = 10;
             int[] mass = new int[10];
             Random rand = new Random();
             for (int i = 0; i < mass.Length; i++)
             {
-                Console.Write("{0}  ", mass[i] = rand.Next(-10, 10));//todo pn хардкод
+                Console.Write("{0}  ", mass[i] = rand.Next(randmin, randmax));
             }
 
             Console.WriteLine();
@@ -24,7 +26,7 @@
                 result += (i > 0) ? i : 0;
             }
 
-            Console.WriteLine("Сумма неотрицательныхчисел = {0}", result);
+            Console.WriteLine("Sum of non-negative numbers = {0}", result);
         }
     }
 }

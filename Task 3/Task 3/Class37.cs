@@ -9,11 +9,12 @@
     {
         public void Gnomsort()
         {
+            int randnum = 100;
             int[] mass = new int[5];
             Random rand = new Random();
             for (int i = 0; i < mass.Length; i++)
             {
-                Console.Write("{0}  ", mass[i] = rand.Next(100));//todo pn хардкод
+                Console.Write("{0}  ", mass[i] = rand.Next(randnum));
             }
 
             Console.WriteLine();

@@ -35,7 +35,7 @@
                 bool overmax = ((maxval == 0) ? false : true) & result > maxval;
                 if (result == 0 | overmax)
                 {
-                    Console.WriteLine("Ошибка! Значение не может быть равно {0}. Введите еще раз!", result);//todo pn сильная связность, строку-сообщение в ресурсы
+                    Console.WriteLine("Error! Value cannot be {0}. Try again!", result);//todo pn сильная связность, строку-сообщение в ресурсы ????
                     result = this.Readint(str, defaultval, maxval);
                 }
 

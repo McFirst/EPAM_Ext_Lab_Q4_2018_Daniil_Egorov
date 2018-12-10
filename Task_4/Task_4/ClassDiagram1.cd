@@ -2,6 +2,11 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Task_4.UserClass">
     <Position X="0.5" Y="2" Width="1.5" />
+    <AssociationLine Name="RoleClass" Type="Task_4.RoleClass">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.152" Y="0.102" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>IAAAAAAIACAAAAAAEAAAAAQABAAAAAABAAAQAAAAAAA=</HashCode>
       <FileName>UserClass.cs</FileName>
@@ -12,6 +17,16 @@
   </Class>
   <Class Name="Task_4.RoleClass">
     <Position X="3.25" Y="2.5" Width="1.5" />
+    <AssociationLine Name="UserView" Type="Task_4.UserView">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.9" Y="0.518" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="UserAdmin" Type="Task_4.UserAdmin">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.048" Y="0.862" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAAAEAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>RoleClass.cs</FileName>

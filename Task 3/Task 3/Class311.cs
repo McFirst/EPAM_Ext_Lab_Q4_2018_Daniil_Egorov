@@ -11,7 +11,7 @@
         {
             string text = null;
             string defstr = "abc.ab abcd";
-            Console.Write("Введите строку [{0}]: ", defstr);//todo pn сильная связность
+            Console.Write("Enter the string [{0}]: ", defstr);//todo pn сильная связность ????
             text = Console.ReadLine();
             if (text == string.Empty)
             {
@@ -39,11 +39,11 @@
             countword += separ ? 0 : 1;
             if (countword == 0)
             {
-                Console.WriteLine("В строке нет ни одного слова!");
+                Console.WriteLine("There are no words in the line!");
             }
             else
             {
-                Console.WriteLine("Средняя Длина слова: {0}", countchar / countword);
+                Console.WriteLine("Average word length: {0}", countchar / countword);
             }
         }
     }

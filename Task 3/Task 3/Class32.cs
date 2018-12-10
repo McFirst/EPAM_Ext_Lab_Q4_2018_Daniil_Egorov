@@ -10,11 +10,12 @@
     {
         public void Hierarchy(double countrow)
         {
+            string symb = "*";
             var sb = new StringBuilder(string.Empty);
             for (int i = 0; i < countrow; i++)
             {
-                sb.Append("*");//todo pn хардкод
-                Console.WriteLine(sb.ToString());//todo pn сильная связность
+                sb.Append(symb);
+                Console.WriteLine(sb);
             }
         }
     }

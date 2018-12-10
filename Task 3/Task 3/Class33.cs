@@ -10,17 +10,20 @@
     {
         public void Pipyramid(double countrow, double indent)
         {
+            string symb = "*";
+            string rsubs = " *";
+            string rpstr = "***";
             var sb = new StringBuilder(string.Empty);
             for (int i = 1; i < countrow + indent; i++)
             {
                 sb.Append(" ");
             }
 
-            sb.Append("*");//todo pn хардкод
+            sb.Append(symb);
             for (int i = 0; i < countrow; i++)
             {
-                Console.WriteLine(sb.ToString());//todo pn сильная связность
-                sb.Replace(" *", "***");//todo pn хардкод
+                Console.WriteLine(sb.ToString());//todo pn сильная связность ????
+                sb.Replace(rsubs, rpstr);
             }
         }
     }
