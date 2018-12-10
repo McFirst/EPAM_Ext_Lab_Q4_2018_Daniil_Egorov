@@ -10,10 +10,10 @@
     {
         public void Doubletter()
         {
-            string deftxt1 = "abc.ab cde";
+            string deftxt1 = "abc.ab cde";//todo pn в ресурсы
             string deftxt2 = "bceb";
             string text1 = null;
-            Console.Write("Введите первую строку [abc.ab cde]: ");
+            Console.Write("Введите первую строку [abc.ab cde]: ");//todo pn сильная связность
             text1 = Console.ReadLine();
             text1 = (text1 == string.Empty) ? deftxt1 : text1;
             string text2 = null;

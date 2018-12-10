@@ -34,7 +34,7 @@
                 ConsoleKeyInfo keyPress = Console.ReadKey(true);
                 input = keyPress.KeyChar;
                 ///ограничение на управлющие Enter и ESC
-                iscont = ((input == (char)13) | input == '\u001b') ? true : false;
+                iscont = ((input == (char)13) | input == '\u001b') ? true : false;//todo pn хардкод
 
                 if (char.IsDigit(input))
                 {
@@ -50,7 +50,7 @@
             Console.WriteLine();
 
             ///если ESC то прервать рекрсию
-            if (input != '\u001b')
+            if (input != '\u001b')//todo pn хардкод
             {
                 int numpar = Convert.ToInt32(Math.Floor(result));
                 this.status[numpar - 1] = !this.status[numpar - 1];

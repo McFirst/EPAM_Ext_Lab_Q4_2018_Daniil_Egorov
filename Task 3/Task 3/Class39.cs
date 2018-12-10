@@ -13,7 +13,7 @@
             Random rand = new Random();
             for (int i = 0; i < mass.Length; i++)
             {
-                Console.Write("{0}  ", mass[i] = rand.Next(-10, 10));
+                Console.Write("{0}  ", mass[i] = rand.Next(-10, 10));//todo pn хардкод
             }
 
             Console.WriteLine();

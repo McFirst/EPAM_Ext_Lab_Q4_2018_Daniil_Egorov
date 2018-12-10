@@ -12,7 +12,7 @@
     {
         public void Сomparison()
         {
-            for (int j = 0; j < 1000; j++)
+            for (int j = 0; j < 1000; j++)//todo pn хардкод
             {
                 string str = string.Empty;
                 StringBuilder sb = new StringBuilder();
@@ -23,7 +23,7 @@
                 swstr.Start();
                 for (int i = 0; i < n; i++)
                 {
-                    str += "*";
+                    str += "*";//todo pn хардкод
                 }
 
                 swstr.Stop();
@@ -31,7 +31,7 @@
                 swsb.Start();
                 for (int i = 0; i < n; i++)
                 {
-                    sb.Append("*");
+                    sb.Append("*");//todo pn хардкод
                 }
 
                 swsb.Stop();

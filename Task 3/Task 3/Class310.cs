@@ -17,7 +17,7 @@
             {
                 for (int j = 0; j < mass.GetLength(1); j++)
                 {
-                    Console.Write("{0}\t", mass[i, j] = rand.Next(-10, 10));
+                    Console.Write("{0}\t", mass[i, j] = rand.Next(-10, 10));//todo pn сильная связность
                     result += ((i + j) % 2 == 0) ? mass[i, j] : 0;
                 }
 

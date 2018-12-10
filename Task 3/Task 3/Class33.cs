@@ -16,11 +16,11 @@
                 sb.Append(" ");
             }
 
-            sb.Append("*");
+            sb.Append("*");//todo pn хардкод
             for (int i = 0; i < countrow; i++)
             {
-                Console.WriteLine(sb.ToString());
-                sb.Replace(" *", "***");
+                Console.WriteLine(sb.ToString());//todo pn сильная связность
+                sb.Replace(" *", "***");//todo pn хардкод
             }
         }
     }

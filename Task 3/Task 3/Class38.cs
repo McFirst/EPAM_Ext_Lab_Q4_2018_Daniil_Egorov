@@ -18,7 +18,7 @@
                 {
                     for (int k = 0; k < mass.GetLength(2); k++)
                     {
-                        mass[i, j, k] = rand.Next(-10, 10);
+                        mass[i, j, k] = rand.Next(-10, 10);//todo pn хардкод
                     }
                 }
             }

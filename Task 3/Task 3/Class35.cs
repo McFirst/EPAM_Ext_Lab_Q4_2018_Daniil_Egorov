@@ -14,7 +14,7 @@
             {
                 if ((i % divider1 == 0) | (i % divider2 == 0))
                 {
-                    Console.Write("{0}, ", i);
+                    Console.Write("{0}, ", i);//todo pn сильная связность
                     result = result + i;
                 }
             }

@@ -13,8 +13,8 @@
             var sb = new StringBuilder(string.Empty);
             for (int i = 0; i < countrow; i++)
             {
-                sb.Append("*");
-                Console.WriteLine(sb.ToString());
+                sb.Append("*");//todo pn хардкод
+                Console.WriteLine(sb.ToString());//todo pn сильная связность
             }
         }
     }

@@ -11,7 +11,7 @@
         {
             string text = null;
             string defstr = "abc.ab abcd";
-            Console.Write("Введите строку [{0}]: ", defstr);
+            Console.Write("Введите строку [{0}]: ", defstr);//todo pn сильная связность
             text = Console.ReadLine();
             if (text == string.Empty)
             {
