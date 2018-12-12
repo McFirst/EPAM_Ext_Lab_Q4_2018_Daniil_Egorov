@@ -11,7 +11,6 @@ namespace Task_4
         public string Autor;
         public string Type;
         public date Date;
-        private string Path;
         public float Rating;
         public list Tag;
 
@@ -31,9 +30,28 @@ namespace Task_4
             }
         }
 
-        public string Content()
+        public MaterialPath MaterialPath
         {
-            throw new System.NotImplementedException();
+            get => default(MaterialPath);
+            set
+            {
+            }
+        }
+
+        public MaterialAction MaterialAction
+        {
+            get => default(MaterialAction);
+            set
+            {
+            }
+        }
+
+        public MaterialFilter MaterialFilter
+        {
+            get => default(MaterialFilter);
+            set
+            {
+            }
         }
     }
 }

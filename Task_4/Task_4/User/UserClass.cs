@@ -7,13 +7,13 @@ namespace Task_4
 {
     public class UserClass
     {
-        public stirng Login;
+        public string Login;
         public string Name;
         public string Surname;
         private string Email;
         private string Passw;
-        public date Date;
-        private list Role;
+        public DateTime Date;
+        private List Role;
 
         public RoleClass RoleClass
         {

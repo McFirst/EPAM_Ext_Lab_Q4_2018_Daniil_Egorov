@@ -5,11 +5,11 @@ using System.Text;
 
 namespace Task_4
 {
-    public class UserAdmin : UserClass
+    public class UserView : UserClass
     {
-        public MaterialAdmin MaterialAdmin
+        public MaterialClass MaterialClass
         {
-            get => default(MaterialAdmin);
+            get => default(MaterialClass);
             set
             {
             }

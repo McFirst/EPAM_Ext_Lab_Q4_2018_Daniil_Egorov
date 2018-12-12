@@ -5,14 +5,14 @@ using System.Text;
 
 namespace Task_4
 {
-    public class MaterialAdmin : MaterialClass
+    public class MaterialFilter
     {
-        public void Edit()
+        public void Find()
         {
             throw new System.NotImplementedException();
         }
 
-        public void Add()
+        public void FindByTag()
         {
             throw new System.NotImplementedException();
         }
