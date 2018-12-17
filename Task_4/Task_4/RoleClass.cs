@@ -9,17 +9,17 @@ namespace Task_4
     {
         private string Role;
 
-        public UserView UserView
+        public Guest UserView
         {
-            get => default(UserView);
+            get => default(Guest);
             set
             {
             }
         }
 
-        public UserAdmin UserAdmin
+        public Admin UserAdmin
         {
-            get => default(UserAdmin);
+            get => default(Admin);
             set
             {
             }

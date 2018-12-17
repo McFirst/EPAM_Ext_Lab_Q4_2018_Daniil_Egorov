@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Task_4
 {
-    public class UserView : UserClass
+    public class Guest : User
     {
         public MaterialClass MaterialClass
         {

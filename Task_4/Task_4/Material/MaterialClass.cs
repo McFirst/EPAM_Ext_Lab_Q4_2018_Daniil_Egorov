@@ -13,6 +13,7 @@ namespace Task_4
         public date Date;
         public float Rating;
         public list Tag;
+        private string Path;
 
         public TagClass TagClass
         {
@@ -25,22 +26,6 @@ namespace Task_4
         public RatingClass RatingClass
         {
             get => default(RatingClass);
-            set
-            {
-            }
-        }
-
-        public MaterialPath MaterialPath
-        {
-            get => default(MaterialPath);
-            set
-            {
-            }
-        }
-
-        public MaterialAction MaterialAction
-        {
-            get => default(MaterialAction);
             set
             {
             }

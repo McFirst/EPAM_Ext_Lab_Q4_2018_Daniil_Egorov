@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Task_4
 {
-    public class UserAdmin : UserClass
+    public class Admin : User
     {
         public MaterialClass MaterialClass
         {

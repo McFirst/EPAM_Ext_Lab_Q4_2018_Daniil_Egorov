@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Task_4
 {
-    public class UserClass
+    public class User
     {
         public string Login;
         public string Name;
