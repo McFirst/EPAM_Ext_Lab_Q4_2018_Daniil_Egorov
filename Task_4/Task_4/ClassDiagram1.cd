@@ -4,21 +4,27 @@
     <Position X="0.5" Y="0.5" Height="0.75" Width="2.502" />
   </Comment>
   <Class Name="Task_4.User">
-    <Position X="0.5" Y="2" Width="1.5" />
-    <AssociationLine Name="RoleClass" Type="Task_4.RoleClass">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <AssociationLine Name="RoleClass" Type="Task_4.Roles">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.152" Y="0.102" />
       </MemberNameLabel>
     </AssociationLine>
+    <AssociationLine Name="UserService" Type="Task_4.UserService">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.067" Y="0.206" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>IAAAAAAIACAAAAAAEAAAAAQABAAAAAABAAAQAAAAAAA=</HashCode>
-      <FileName>User\UserClass.cs</FileName>
+      <HashCode>IAAAAAAIACAAAAAAEAAAgAQABAAAAAABAAAQAAAAAAA=</HashCode>
+      <FileName>User\User.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="RoleClass" />
+      <Property Name="UserService" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Task_4.RoleClass">
+  <Class Name="Task_4.Roles">
     <Position X="3.25" Y="2.5" Width="1.5" />
     <AssociationLine Name="UserView" Type="Task_4.Guest">
       <MemberNameLabel ManuallyPlaced="true">
@@ -32,49 +38,55 @@
     </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAAAEAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
-      <FileName>RoleClass.cs</FileName>
+      <FileName>User\Roles.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="UserView" />
       <Property Name="UserAdmin" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Task_4.MaterialClass">
+  <Class Name="Task_4.Material">
     <Position X="5.75" Y="2" Width="1.5" />
+    <AssociationLine Name="MaterialService" Type="Task_4.MaterialService">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.15" Y="0.404" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAgAAAAAAAEgEAIAAAAAAAAAAAAAAAEBCQAAAAACAAA=</HashCode>
-      <FileName>Material\MaterialClass.cs</FileName>
+      <HashCode>AAgAAAAAAAEgEgIAAAAAAAAAAAAAAAEBCQAAAAACAAA=</HashCode>
+      <FileName>Material\Material.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="TagClass" />
       <Property Name="RatingClass" />
       <Property Name="MaterialFilter" />
+      <Property Name="MaterialService" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Task_4.RatingClass">
+  <Class Name="Task_4.Ratings">
     <Position X="8.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
-      <FileName>RatingClass.cs</FileName>
+      <FileName>Material\Ratings.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Task_4.TagClass">
+  <Class Name="Task_4.Tags">
     <Position X="8.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>TagClass.cs</FileName>
+      <FileName>Material\Tags.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Task_4.Guest">
     <Position X="3.25" Y="0.5" Width="1.5" />
-    <AssociationLine Name="MaterialClass" Type="Task_4.MaterialClass">
+    <AssociationLine Name="MaterialClass" Type="Task_4.Material">
       <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
         <Position X="0.079" Y="1.071" Height="0.182" Width="1.11" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>User\UserView.cs</FileName>
+      <FileName>User\Guest.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="MaterialClass" />
@@ -82,14 +94,14 @@
   </Class>
   <Class Name="Task_4.Admin">
     <Position X="3.25" Y="5" Width="1.5" />
-    <AssociationLine Name="MaterialClass" Type="Task_4.MaterialClass">
+    <AssociationLine Name="MaterialClass" Type="Task_4.Material">
       <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
-        <Position X="0.203" Y="1.143" Height="0.182" Width="1.215" />
+        <Position X="-0.38" Y="-0.294" Height="0.182" Width="1.215" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAgAAAAAAgAAAA=</HashCode>
-      <FileName>User\UserAdmin.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>User\Admin.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="MaterialClass" />
@@ -101,6 +113,22 @@
       <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Material\MaterialFilter.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="Task_4.UserService">
+    <Position X="0.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAABAAAAAAAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>User\UserService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="0.883" />
+  </Class>
+  <Class Name="Task_4.MaterialService">
+    <Position X="6" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAABAAAAAAAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Material\MaterialService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="0.664" />
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
