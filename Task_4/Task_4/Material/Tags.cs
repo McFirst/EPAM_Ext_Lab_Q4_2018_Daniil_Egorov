@@ -2,16 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Task_4
 {
-    class Program
+    public class Tags
     {
-        static void Main()
-        {
-            
-        }
+        public string Tag;
     }
-    
 }
