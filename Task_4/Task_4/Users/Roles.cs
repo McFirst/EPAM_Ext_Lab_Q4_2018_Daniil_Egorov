@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Task_4
+﻿namespace Task_4.Users
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+
     public class Roles
     {
-        private string Role;
+        public string Role;
 
-        public Guest UserView
+        public Guest Guest
         {
             get => default(Guest);
             set
@@ -17,7 +17,7 @@ namespace Task_4
             }
         }
 
-        public Admin UserAdmin
+        public Admin Admin
         {
             get => default(Admin);
             set

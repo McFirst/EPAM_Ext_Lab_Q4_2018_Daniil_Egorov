@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Картотека текстовых материалов&#xD;&#xA;Поиск в картотеке по критериям&#xD;&#xA;Оценка материалов пользователями">
+    <Position X="0.5" Y="0.5" Height="0.75" Width="2.502" />
+  </Comment>
+  <Class Name="Task_4.User.User">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <AssociationLine Name="RoleClass" Type="Task_4.User.Roles">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.152" Y="0.102" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="UserService" Type="Task_4.User.UserService">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.067" Y="0.206" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>IAAAAAAIACAAgAAAEAAAgAQABAAAAAABAAAQAAAAAAA=</HashCode>
+      <FileName>User\User.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RoleClass" />
+      <Property Name="UserService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Task_4.User.Roles">
+    <Position X="3.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAEAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>User\Roles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Task_4.Material.Ratings">
+    <Position X="8.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Material\Ratings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Task_4.Material.Tags">
+    <Position X="8.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Material\Tags.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Task_4.User.Guest">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>User\Guest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Task_4.Material.MaterialFilter">
+    <Position X="8.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Material\MaterialFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Task_4.User.UserService">
+    <Position X="0.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAABAAAAAAAAAAAEAAAAABgAAAAAAAAA=</HashCode>
+      <FileName>User\UserService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="1.59" />
+  </Class>
+  <Class Name="Task_4.Material.MaterialService">
+    <Position X="6" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEIAAAAAAAABAAAAAAAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Material\MaterialService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Right" Position="0.664" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
