@@ -8,24 +8,36 @@
 
     public class MaterialService : IMaterialService
     {
+        /// <summary>
+        /// приватный список материалов
+        /// </summary>
         private List<Material> mat = new List<Material>(3);
 
+        /// <summary>
+        /// Удаление материала по id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool Delete(int id)
         {
-            bool del = false;
-            foreach (Material i in this.mat)
+            Material y = null;
+            y = this.mat.FirstOrDefault(x => x.ID == id);
+            if (y != null)
             {
-                if (i.ID == id)
-                {
-                    this.mat.RemoveAt(id);
-                    del = true;
-                    break;
-                }
+                this.mat.Remove(y);
+                return true;
             }
-
-            return del;
+            else
+            {
+                return false;
+            }
         }
 
+        /// <summary>
+        /// получение материала по ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public Material Get(int id)
         {
             Material ret = null;
@@ -40,14 +52,23 @@
             return ret;
         }
 
+        /// <summary>
+        /// получение всего списка материалов
+        /// </summary>
+        /// <returns></returns>
         public List<Material> GetAll()
         {
             return this.mat;
         }
 
+        /// <summary>
+        /// добавление нового материала
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public bool Save(Material entity)
         {
-            if (this.mat.Exists(x => x == entity))
+            if (this.mat.Exists(x => x.ID == entity.ID))
             {
                 return false;
             }
@@ -58,6 +79,10 @@
             }
         }
 
+        /// <summary>
+        /// первичная загрузка материалов
+        /// </summary>
+        /// <returns></returns>
         public bool LoadMaterials()
         {
             Material mat1 = new Material(1, "Material1", "Autor1", "Type1", "01.01.2001", 2, "Tag1", "C:\\mat1");

@@ -7,14 +7,14 @@
 
     public class Material
     {
-        public int ID;
-        public string Caption;
-        public string Autor;
-        public string Type;
-        public string Date;
-        public float Rating;
-        public string Tag;
-        public string Path;
+        public int ID { get; set; }
+        public string Caption { get; set; }
+        public string Autor { get; set; }
+        public string Type { get; set; }
+        public string Date { get; set; }
+        public float Rating { get; set; }
+        public string Tag { get; set; }
+        public string Path { get; set; }
 
         public Material()
         {

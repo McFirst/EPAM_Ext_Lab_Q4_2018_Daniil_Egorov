@@ -13,24 +13,31 @@
         /// </summary>
         private List<User> use = new List<User>(3);
 
-        /// Удаление
+        /// <summary>
+        /// Удаление пользователя
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool Delete(int id)
         {
-            bool del = false;
-            foreach (User i in this.use)
+            User y = null;
+            y = this.use.FirstOrDefault(x => x.ID == id);
+            if (y != null)
             {
-                if (i.ID == id)
-                {
-                    this.use.RemoveAt(id);
-                    del = true;
-                    break;
-                }
+                this.use.Remove(y);
+                return true;
             }
-
-            return del;
+            else
+            {
+                return false;
+            }
         }
 
+        /// <summary>
         /// получение пользователя по ID
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public User Get(int id)
         {
             User ret = null;
@@ -45,32 +52,37 @@
             return ret;
         }
 
-        ///получение всего списка
+        /// <summary>
+        /// получение всего списка
+        /// </summary>
+        /// <returns></returns>
         public List<User> GetAll()
         {
             return this.use;
         }
 
-        ///добавление нового пользователя
+        /// <summary>
+        /// добавление нового пользователя
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         public bool Save(User entity)
         {
-            bool sav = false;
-            foreach (User i in this.use)
+            if (this.use.Exists(x => x.ID == entity.ID))
             {
-                if (i.ID == entity.ID)
-                {
-                    sav = true;
-                }
+                return false;
             }
-
-            if (sav)
+            else
             {
                 this.use.Add(entity);
+                return true;
             }
-            return sav;
         }
 
-        ///первичная загрузка спискапользователей
+        /// <summary>
+        /// первичная загрузка спискапользователей
+        /// </summary>
+        /// <returns></returns>
         public bool LoadUsers()
         {
             User user1 = new User(1, "Login1", "User1", "SurUser1", "user1@mail.ru", "pass1", "01.01.2001", "guest");
@@ -79,6 +91,5 @@
             this.use.Add(user2);
             return true;
         }
-
     }
 }

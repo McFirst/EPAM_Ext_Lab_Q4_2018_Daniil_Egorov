@@ -7,16 +7,16 @@
 
     public class User
     {
-        public int ID;
-        public string Login;
-        public string Name;
-        public string Surname;
-        public string Email;
-        public string Passw;
-        public string Date;
-        public string Role;
+        public int ID { get; set; }
+        public string Login { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string Email { get; set; }
+        public string Passw { get; set; }
+        public string Date { get; set; }
+        public string Role { get; set; }
 
-    public User()
+        public User()
         {
             this.ID = -1;
             this.Login = null;

@@ -4,35 +4,25 @@
     using System.Collections.Generic;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Task_4.Users;
-    using Task_4.Materials;
 
     [TestClass]
     public class UserTest
     {
-        
-        /*public string Name = "User1";
-        public string Surname = "SurUser1";
-        public string Email = "user1@mail.ru";
-        public string Passw = "pass1";
-        public string Date = "01.01.2001";
-        public string Role = "guest";*/
-        //User user1 = new User(1, "User1", "User1", "SurUser1", "user1@mail.ru", "pass1", "01.01.2001", "guest");
-
         [TestMethod]
         public void TestMethod_Get_User()
         {
             // Arrange
-            int ID = 1;
-            string Login = "Login1";
+            int id = 1;
+            string login = "Login1";
             UserService uservise = new UserService();
             uservise.LoadUsers();
 
             // Act
-            User testuser = uservise.Get(ID);
+            User testuser = uservise.Get(id);
 
             // Assert
             string actual = testuser.Login;
-            Assert.AreEqual(Login, actual, "Invalid result");
+            Assert.AreEqual(login, actual, "Invalid result");
         }
 
         [TestMethod]
@@ -74,10 +64,10 @@
             UserService uservise = new UserService();
             uservise.LoadUsers();
             bool expect = true;
-            int ID = 1;
+            int id = 1;
 
             // Act
-            bool actual = uservise.Delete(ID);
+            bool actual = uservise.Delete(id);
 
             // Assert
             Assert.AreEqual(expect, actual, "Invalid result");
