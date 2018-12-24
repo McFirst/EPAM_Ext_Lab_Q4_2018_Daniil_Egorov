@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Task_6
+﻿namespace Task_6
 {
-    class SortLength
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    public class SortLength
     {
         #region DelegateBlock
         //////////////////////////////////////////////////////////////////////////////////
@@ -29,7 +29,7 @@ namespace Task_6
         /// <param name="methodToCall"></param>
         public void RegisterComp(Strcompare methodToCall)
         {
-            listcomp = methodToCall;
+            this.listcomp = methodToCall;
         }
 
         /// <summary>
@@ -38,31 +38,39 @@ namespace Task_6
         /// <param name="methodToCall"></param>
         public void UnRegisteComp(Strcompare methodToCall)
         {
-            listcomp -= methodToCall;
+            this.listcomp -= methodToCall;
         }
-
         //////////////////////////////////////////////////////////////////////////////////
         #endregion
 
+        /// <summary>
+        /// внетренний массив строк
+        /// </summary>
         private string[] lines;
 
+        /// <summary>
+        /// сортировка массива
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public string[] StringSort(string[] input)
         {
-            lines = input;
+            this.lines = input;
             string str = null;
-            for (int i = 0; i < lines.Length - 1; i++)
+            for (int i = 0; i < this.lines.Length - 1; i++)
             {
-                for (int j = i + 1; j < lines.Length; j++)
+                for (int j = i + 1; j < this.lines.Length; j++)
                 {
-                    if (listcomp(lines[i], lines[j]))
+                    if (this.listcomp(this.lines[i], this.lines[j]))
                     {
-                        str = lines[i];
-                        lines[i] = lines[j];
-                        lines[j] = str;
+                        str = this.lines[i];
+                        this.lines[i] = this.lines[j];
+                        this.lines[j] = str;
                     }
                 }
             }
-            return lines;
+
+            return this.lines;
         }
     }
 }

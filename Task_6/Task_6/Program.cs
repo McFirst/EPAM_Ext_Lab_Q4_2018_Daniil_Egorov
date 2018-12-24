@@ -1,40 +1,59 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Task_6
+﻿namespace Task_6
 {
-    class Program
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            string[] lines = new string[] { "abcd", "pcd", "abcde", "bbc", "a" };
+            /*string[] lines = new string[] { "abcd", "pcd", "abcde", "bbc", "a" };
             SortLength sl = new SortLength();
-            sl.RegisterComp(onStrcompare);
+            sl.RegisterComp(OnStrcompare);
 
             foreach (string i in lines)
+            {
                 Console.WriteLine(i);
+            }
+
             Console.WriteLine();
-
             foreach (string i in sl.StringSort(lines))
+            {
                 Console.WriteLine(i);
+            }
+            */
 
-            //Console.WriteLine(String.Compare("abc", "pbc"));
+            Person u1 = new Person("Boris");
+            Console.WriteLine(u1.Hi(new Person("Nina"), 12));
+            Console.WriteLine(u1.Bye(new Person("Nana")));
+
             Console.ReadLine();
         }
 
-        public static bool onStrcompare(string str1, string str2)
+        /// <summary>
+        /// сравнение двух строк (возвращает true если надо менять местами)
+        /// </summary>
+        /// <param name="str1"></param>
+        /// <param name="str2"></param>
+        /// <returns></returns>
+        public static bool OnStrcompare(string str1, string str2)
         {
             bool ret = false;
             if (str1.Length > str2.Length)
+            {
                 ret = true;
+            }
             else if (str1.Length == str2.Length)
             {
-                if (String.Compare(str1, str2) > 0)
+                if (string.Compare(str1, str2) > 0)
+                {
                     ret = true;
+                }
             }
+
             return ret;
         }
     }
