@@ -21,7 +21,7 @@
         /// <param name="user"></param>
         /// <param name="time"></param>
         /// <returns></returns>
-        public string Hi(Person user, int time)
+        public void Hi(Person user, int time)
         {
             string result = null;
             /*
@@ -44,7 +44,7 @@
                 result = hi[2];
             }
 
-            return result + user.Name + "!, - say " + this.Name;
+            Console.WriteLine(result + user.Name + "!, - say " + this.Name);
         }
 
         /// <summary>
@@ -52,11 +52,11 @@
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public string Bye(Person user)
+        public void Bye(Person user)
         {
             string result = null;
             result = "Goodbye, " + user.Name + "!, - say " + this.Name;
-            return result;
+            Console.WriteLine(result);
         }
 
         public Person(string name)

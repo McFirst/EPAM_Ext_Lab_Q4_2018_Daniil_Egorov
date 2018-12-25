@@ -61,11 +61,14 @@
             {
                 for (int j = i + 1; j < this.lines.Length; j++)
                 {
-                    if (this.listcomp(this.lines[i], this.lines[j]))
+                    if (this.listcomp != null)
                     {
-                        str = this.lines[i];
-                        this.lines[i] = this.lines[j];
-                        this.lines[j] = str;
+                        if (this.listcomp(this.lines[i], this.lines[j]))
+                        {
+                            str = this.lines[i];
+                            this.lines[i] = this.lines[j];
+                            this.lines[j] = str;
+                        }
                     }
                 }
             }

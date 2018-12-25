@@ -26,9 +26,17 @@
             }
             */
 
-            Person u1 = new Person("Boris");
-            Console.WriteLine(u1.Hi(new Person("Nina"), 12));
-            Console.WriteLine(u1.Bye(new Person("Nana")));
+            List<Person> u1 = new List<Person>(3);
+            u1.Add(new Person("Abraam"));
+            u1.Add(new Person("Boris"));
+            u1.Add(new Person("Donn"));
+
+            Office office = new Office();
+            foreach(Person i in u1)
+            {
+                office.Income += i.Hi;
+            }
+            //office.Income;
 
             Console.ReadLine();
         }
