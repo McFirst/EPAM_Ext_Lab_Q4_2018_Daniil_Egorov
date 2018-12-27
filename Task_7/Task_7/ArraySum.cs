@@ -13,12 +13,12 @@ namespace Task_7
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public static decimal SumArray(this int[] param)
-        {
-            decimal result = 0;
-            foreach (int i in param)
+        public static T SumArray<T>(this T[] param)
+        { 
+            T result=default(T);
+            foreach (T i in param)
             {
-                result += i;
+                result = result + i;
             }
             return result;
         }
