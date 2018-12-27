@@ -12,10 +12,12 @@ namespace Task_7
         {
             
             int[] arr = new int[] { 1, 2, 3, 4 };
-            decimal result = arr.SumArray();
-            Console.WriteLine(result);
-            
-            
+            double[] arr1 = new double[] { 1.5, 2, 3, 4 };
+            //decimal result = arr.SumArray();
+            Console.WriteLine(arr.SumArray());
+            Console.WriteLine(arr1.SumArray());
+
+
             ////string param = "21";
 
             //////param.IsPositiveInt();
