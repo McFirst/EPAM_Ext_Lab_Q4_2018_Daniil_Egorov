@@ -33,7 +33,7 @@ namespace Task_7
         }
 
         /// <summary>
-        /// Является ли строка положительным целым числом, иначе False
+        /// Является ли строка положительным числом, иначе False
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
