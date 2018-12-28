@@ -45,7 +45,7 @@
         public void TestMethod_Save_Material()
         {
             // Arrange
-            Material mat3 = new Material(1, "Material3", "Autor3", "Type3", "03.03.2003", 2, "Tag3", "C:\\mat3");
+            Material mat3 = new Material(1, "Material3", "Autor3", "Type3", "03.03.2003", 2, "Tag3", "C:\\mat3");//todo pn на всякий случай скажу: абсолютный путь - зло
             MaterialService mservise = new MaterialService();
             mservise.LoadMaterials();
             bool expect = false;
