@@ -9,7 +9,7 @@ namespace Task_7
     public static class ArraySum
     {
         /// <summary>
-        /// считает сумму элементов массива int
+        /// считает сумму элементов массива int, double? 
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
