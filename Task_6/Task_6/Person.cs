@@ -79,7 +79,7 @@
         /// <param name="message"></param>
         public void ShowMessege(string message)
         {
-            Console.WriteLine(message);
+            Console.WriteLine(message);//todo pn сильная связность
         }
 
         /// <summary>
