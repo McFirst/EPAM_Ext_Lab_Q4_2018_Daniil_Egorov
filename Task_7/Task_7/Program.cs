@@ -100,10 +100,10 @@ namespace Task_7
             Console.WriteLine("\n================= 7.3 =================");
             Stopwatch sw = new Stopwatch();
             List<decimal> timing = new List<decimal>(5);
-            int sizearr = 10000;
-            int min = -10;
-            int max = 10;
-            double[] arr3 = new double[sizearr];
+            int sizearr = 1000000;
+            int min = -100;
+            int max = 100;
+            int[] arr3 = new int[sizearr];
             Random rnd = new Random();
 
             for (var i=0; i< arr3.Length;i++)
@@ -144,18 +144,17 @@ namespace Task_7
             Console.WriteLine("\n Method 3:");
             sw.Reset();
             sw.Start();
-            Console.WriteLine(sw.ElapsedMilliseconds);
-            arr3.HigherByDeleg2(delegate (double param)
+            arr3.HigherByDeleg2(delegate (int param)
             {
                 return param > 0;
             });
             timing.Add(sw.ElapsedMilliseconds);
             sw.Stop();
+            Console.WriteLine(sw.ElapsedMilliseconds);
             ////var res = arr3.HigherByDeleg2(delegate (double param) 
             ////{ 
             ////    return param > 0; 
             ////});
-
             ////foreach (var i in res)
             ////{
             ////    Console.Write($"{i}  ");

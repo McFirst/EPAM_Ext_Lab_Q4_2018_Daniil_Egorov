@@ -13,12 +13,12 @@ namespace Task_7
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public static ValueType SumArray<T>(this T[] param)
+        public static ValueType SumArray<T>(this T[] param) 
         {
             ValueType result = default(ValueType);
-            if(typeof(T) == typeof(int))
+            if (typeof(T) == typeof(int))
             {
-                result=(param as IEnumerable<int>).Sum();
+                result = (param as IEnumerable<int>).Sum();
             }
             if (typeof(T) == typeof(double))
             {
@@ -28,7 +28,7 @@ namespace Task_7
             {
                 result = (param as IEnumerable<decimal>).Sum();
             }
-            
+
             return result;
         }
     }
