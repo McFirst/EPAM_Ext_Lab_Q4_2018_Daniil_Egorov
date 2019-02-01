@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Task_7
 {
-    public static class SortArray
+    public static class SortArray //todo pn для чего?
     {
         
     }

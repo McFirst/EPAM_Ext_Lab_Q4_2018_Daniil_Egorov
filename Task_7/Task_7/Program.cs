@@ -175,8 +175,8 @@ namespace Task_7
             Console.WriteLine("\n Method 5:");
             sw.Reset();
             sw.Start();
-            arr3.HigherByLINQ(0);
-            timing.Add(sw.ElapsedMilliseconds);
+            arr3.HigherByLINQ(0);//todo pn не выполнено требование задания "которому условие поиска передаётся через делегат в виде лямбда-выражения; "
+			timing.Add(sw.ElapsedMilliseconds);
             sw.Stop();
             Console.WriteLine(sw.ElapsedMilliseconds);
             ////foreach (var i in arr3.HigherByLINQ(0))

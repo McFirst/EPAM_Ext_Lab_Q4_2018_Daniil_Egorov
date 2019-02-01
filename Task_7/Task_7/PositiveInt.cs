@@ -27,7 +27,7 @@ namespace Task_7
             }
             catch(System.FormatException e)
             {
-                /// лог ошибки
+                /// лог ошибки //todo np где? :)
             }
             return result;
         }
