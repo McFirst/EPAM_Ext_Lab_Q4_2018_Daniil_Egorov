@@ -1,3 +1,4 @@
+use [Northwind]
 --TASK_8.1
 ----1.1
 /*SELECT [OrderID], [ShippedDate], [ShipVia]
@@ -85,5 +86,22 @@ FROM [Northwind].[dbo].[Orders]
 
 --TASK_8.6
 ----6.1
-SELECT 
+/*SELECT Year([OrderDate]) AS [Year], COUNT([OrderID]) AS [Total]
 FROM [Northwind].[dbo].[Orders]
+GROUP BY Year([OrderDate])
+ORDER BY [Year]
+
+SELECT COUNT(*) as [Total]
+FROM [Northwind].[dbo].[Orders]
+*/
+----6.2
+SELECT (
+	select [LastName]+' '+[FirstName] from [dbo].[Employees]
+	where [Employees].[EmployeeID] = [Orders].[EmployeeID]
+		) AS [Seller]
+		, COUNT([OrderID]) AS [Total]
+FROM [dbo].[Orders]
+GROUP BY [EmployeeID]
+ORDER BY [Total]
+
+----6.3
