@@ -104,8 +104,8 @@ FROM [dbo].[Orders]
 GROUP BY [EmployeeID]
 ORDER BY [Total]
 */
-----6.3
-SELECT
+----6.3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/*SELECT
 	(SELECT [LastName]+' '+[FirstName] FROM [dbo].[Employees]
 	WHERE [Employees].[EmployeeID] = [Orders].[EmployeeID]
 		) AS [Seller] 
@@ -117,3 +117,8 @@ FROM [dbo].[Orders]
 WHERE Year([OrderDate]) = 1998
 GROUP BY CUBE ([EmployeeID], [CustomerID])
 ORDER BY [Amount] DESC
+*/
+----6.4 DISTINCT
+SELECT [Customers].[ContactName] AS [Person], [Employees].[FirstName] AS [Person]
+FROM [dbo].[Customers], [dbo].[Employees]
+WHERE [Customers].[City] = [Employees].[City]
