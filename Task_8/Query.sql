@@ -118,7 +118,33 @@ WHERE Year([OrderDate]) = 1998
 GROUP BY CUBE ([EmployeeID], [CustomerID])
 ORDER BY [Amount] DESC
 */
-----6.4 DISTINCT
-SELECT [Customers].[ContactName] AS [Person], [Employees].[FirstName] AS [Person]
+----6.4 
+/*SELECT DISTINCT [Customers].[ContactName] AS [Person], 'Customer' AS [Type], [Customers].[City]
 FROM [dbo].[Customers], [dbo].[Employees]
 WHERE [Customers].[City] = [Employees].[City]
+UNION
+SELECT DISTINCT [Employees].[LastName]+' '+ [Employees].[FirstName] AS [Person], 'Seller' AS [Type], [Employees].[City]
+FROM [dbo].[Customers], [dbo].[Employees]
+WHERE [Customers].[City] = [Employees].[City]
+ORDER BY [City], [Person]
+*/
+----6.5
+/*SELECT DISTINCT [Cus].[CustomerID], [Cus].[City]
+FROM [dbo].[Customers] AS [Cus], [dbo].[Customers] AS [Cus2]
+WHERE [Cus].[City] = [Cus2].[City] AND [Cus].[CustomerID] <> [Cus2].[CustomerID]
+ORDER BY [City]
+
+SELECT [Customers].[City]
+FROM [dbo].[Customers]
+GROUP BY [City]
+HAVING COUNT([City])>1
+ORDER BY [City]
+*/
+----6.6
+/*SELECT DISTINCT [Emp].[LastName] AS [UserName], [Emp2].[LastName] AS [Boss]
+FROM [dbo].[Employees] AS [Emp], [dbo].[Employees] AS [Emp2]
+WHERE [Emp].[ReportsTo] = [Emp2].[EmployeeID]
+*/
+
+--TASK_8.7
+----7.1
