@@ -148,3 +148,49 @@ WHERE [Emp].[ReportsTo] = [Emp2].[EmployeeID]
 
 --TASK_8.7
 ----7.1
+/*SELECT [Emp].[LastName], [Terr].[TerritoryDescription]
+FROM [EmployeeTerritories] AS [EmpTerr] 
+	INNER JOIN [Employees] AS [Emp] ON [EmpTerr].EmployeeID = [Emp].[EmployeeID]
+	INNER JOIN [Territories] AS [Terr] ON [EmpTerr].[TerritoryID] = [Terr].[TerritoryID]
+	INNER JOIN [Region] AS [Reg] ON [Terr].[RegionID] = [Reg].[RegionID] and [Reg].[RegionDescription] = 'Western'
+*/
+
+--TASK_8.8
+----8.1
+/*SELECT [Customers].[ContactName], COUNT([Orders].[OrderID]) AS [CountOrders]
+FROM [Customers] LEFT JOIN [Orders] ON [Customers].[CustomerID] = [Orders].[CustomerID]
+GROUP BY [Customers].[ContactName]
+ORDER BY [CountOrders]
+*/
+
+--TASK_8.9
+----9.1 = не приминимо, т.к. подзапрос может возвращать несколько значений
+/*SELECT [CompanyName]
+FROM [Suppliers]
+WHERE [SupplierID] IN (
+	SELECT [SupplierID]
+	FROM [dbo].[Products]
+	WHERE [UnitsInStock] = 0
+	)
+*/
+
+--TASK_8.10
+----10.1
+/*SELECT [LastName]
+FROM [Employees]
+WHERE  [EmployeeID] in (
+	SELECT DISTINCT [EmployeeID]
+	FROM [Orders]
+	GROUP BY [EmployeeID]
+	HAVING COUNT([OrderID]) > 150
+	)
+*/
+
+--TASK_8.11
+----11.1
+SELECT [Customers].[ContactName]
+FROM [Customers]
+WHERE EXISTS (
+	SELECT DISTINCT [CustomerID]
+	FROM [Orders]
+	)
