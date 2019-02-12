@@ -188,9 +188,9 @@ WHERE  [EmployeeID] in (
 
 --TASK_8.11
 ----11.1
-SELECT [Customers].[ContactName]
+SELECT [ContactName]
 FROM [Customers]
-WHERE EXISTS (
+WHERE not [CustomerID] in (
 	SELECT DISTINCT [CustomerID]
 	FROM [Orders]
 	)
