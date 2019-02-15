@@ -188,9 +188,21 @@ WHERE  [EmployeeID] in (
 
 --TASK_8.11
 ----11.1
-SELECT [ContactName]
-FROM [Customers]
-WHERE not [CustomerID] in (
-	SELECT DISTINCT [CustomerID]
+/*SELECT [ContactName]
+FROM [Customers] AS [COS]
+WHERE NOT EXISTS (
+	SELECT [CustomerID]
 	FROM [Orders]
+	WHERE [Orders].[CustomerID] = [COS].[CustomerID]
 	)
+*/
+
+--TASK_8.12
+----12.1
+/*SELECT SUBSTRING([LastName],1,1) as [ABC]
+FROM [Employees]
+ORDER BY [ABC]
+*/
+
+--TASK_8.13
+----13.1
