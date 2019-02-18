@@ -1,4 +1,5 @@
 use [Northwind]
+go
 --TASK_8.1
 ----1.1
 /*SELECT [OrderID], [ShippedDate], [ShipVia]
@@ -206,3 +207,18 @@ ORDER BY [ABC]
 
 --TASK_8.13
 ----13.1
+/*exec [dbo].[GreatestOrders] @TopRec = 10, @Year = 1997;
+
+SELECT [Employees].[FirstName]+' '+[Employees].[LastName] AS [Employee] 
+	, [Orders].[OrderID]
+	, [Order Details].[UnitPrice]*[Order Details].[Quantity]*(1-[Order Details].[Discount]) AS [OrderCoast]
+FROM [Orders] INNER JOIN [Employees] ON [Orders].[EmployeeID] = [Employees].[EmployeeID]
+	INNER JOIN [Order Details] ON [Orders].[OrderID] = [Order Details].[OrderID]
+WHERE [Employees].[FirstName]='Margaret' and [Employees].[LastName]='Peacock'
+ORDER BY [OrderCoast] DESC
+*/
+----13.2
+--exec [dbo].[ShippedOrdersDiff] @ShipDay = 30
+
+----13.3
+
