@@ -221,4 +221,26 @@ ORDER BY [OrderCoast] DESC
 --exec [dbo].[ShippedOrdersDiff] @ShipDay = 30
 
 ----13.3
+--PRINT N'This user has SET NOCOUNT turned ON.'
+--PRINT N'This user has SET NOCOUNT turned ON.'
 
+--exec [dbo].[SubordinationInfo] @EmplID = 2
+
+/*WITH [DirectReports]([ReportsTo], [EmployeeID], [Title], [EmployeeLevel]) AS   
+(  
+    SELECT [ReportsTo], [EmployeeID], [FirstName]+' '+[LastName] AS [Title], 0 AS [EmployeeLevel]  
+    FROM [dbo].[Employees]
+    WHERE [EmployeeID]=2	--[ReportsTo] is null
+    UNION ALL  
+    SELECT e.[ReportsTo], e.[EmployeeID], e.[FirstName]+' '+e.[LastName] AS [Title], [EmployeeLevel] + 1  
+    FROM [dbo].[Employees] AS e  
+        INNER JOIN [DirectReports] AS d  
+        ON e.[ReportsTo] = d.[EmployeeID]   
+)  
+SELECT [ReportsTo], [EmployeeID], [Title], [EmployeeLevel]   
+FROM [DirectReports]  
+*/
+
+----13.4
+SELECT [FirstName]+' '+[LastName] AS [NAME], [dbo].[IsBoss]([EmployeeID]) AS [IsBoss]
+FROM [dbo].[Employees]
