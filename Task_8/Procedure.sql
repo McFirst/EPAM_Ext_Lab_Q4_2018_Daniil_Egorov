@@ -1,7 +1,7 @@
 USE [Northwind]
 go
 
---не работает
+------13.1
 --DROP PROCEDURE [dbo].[GreatestOrders] IF EXISTS([GreatestOrders])
 IF EXISTS(SELECT 1 FROM sys.procedures WHERE Name = 'GreatestOrders')
 BEGIN
@@ -24,6 +24,7 @@ AS
 	ORDER BY [OrderCoast] DESC
 go
 
+------13.2
 --DROP PROCEDURE IF EXISTS [dbo].[ShippedOrdersDiff];
 IF EXISTS(SELECT 1 FROM sys.procedures WHERE Name = 'ShippedOrdersDiff')
 BEGIN
@@ -40,6 +41,7 @@ AS
 
 GO
 
+------13.3
 --DROP PROCEDURE IF EXISTS [dbo].[SubordinationInfo];
 IF EXISTS(SELECT 1 FROM sys.procedures WHERE Name = 'SubordinationInfo')
 BEGIN
@@ -50,22 +52,42 @@ go
 CREATE PROCEDURE [dbo].[SubordinationInfo]
 	@EmplID int = 2
 AS
-	WITH [DirectReports]([ReportsTo], [EmployeeID], [Title], [EmployeeLevel]) AS   
-(  
-    SELECT [ReportsTo], [EmployeeID], [FirstName]+' '+[LastName] AS [Title], 0 AS [EmployeeLevel]  
-    FROM [dbo].[Employees]
-    WHERE [EmployeeID]=@EmplID	--[ReportsTo] is null
-    UNION ALL  
-    SELECT e.[ReportsTo], e.[EmployeeID], e.[FirstName]+' '+e.[LastName] AS [Title], [EmployeeLevel] + 1  
-    FROM [dbo].[Employees] AS e  
-        INNER JOIN [DirectReports] AS d  
-        ON e.[ReportsTo] = d.[EmployeeID]   
-)  
-SELECT [ReportsTo], [EmployeeID], [Title], [EmployeeLevel]   
-FROM [DirectReports]
-ORDER BY [EmployeeLevel]
+	DECLARE @EmpName nvarchar(50)
+		, @EmpID int
+		, @RepID int
+		, @Emplvl int;
+
+	DECLARE emp_cursor CURSOR FOR
+	WITH [EmployeeTree]([Name], [EmployeeID], [ReportsTo], [EmployeeLevel], [PATHSTR]) AS   
+	(
+		SELECT [FirstName]+' '+[LastName], [EmployeeID], [ReportsTo], 0, CAST('' AS NVARCHAR(MAX))
+		FROM [dbo].[Employees]
+		WHERE [EmployeeID]=@EmplID	--[ReportsTo] is null
+		UNION ALL
+		SELECT e.[FirstName]+' '+e.[LastName], e.[EmployeeID], e.[ReportsTo], t.[EmployeeLevel] + 4, t.[PATHSTR] + e.[FirstName]+' '+e.[LastName]
+		FROM [dbo].[Employees] AS e
+			INNER JOIN [EmployeeTree] AS t
+			ON e.[ReportsTo] = t.[EmployeeID]
+	)
+	SELECT SPACE([EmployeeLevel])+[Name] AS [Name], [EmployeeID], [ReportsTo], [EmployeeLevel]
+	FROM [EmployeeTree]
+	ORDER BY [PATHSTR], [EmployeeID]
+
+	OPEN emp_cursor
+
+	FETCH NEXT FROM emp_cursor
+	INTO @EmpName, @EmpID, @RepID, @Emplvl
+	WHILE @@FETCH_STATUS = 0  
+	BEGIN  
+		PRINT @EmpName
+		FETCH NEXT FROM emp_cursor
+		INTO @EmpName, @EmpID, @RepID, @Emplvl
+	END
+	CLOSE emp_cursor;
+	DEALLOCATE emp_cursor;
 GO
 
+------13.4
 --DROP FUNCTION IF EXISTS [dbo].[IsBoss];
 IF object_id(N'IsBoss', N'FN') IS NOT NULL
     DROP FUNCTION [dbo].[IsBoss]
