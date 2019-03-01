@@ -8,37 +8,37 @@ namespace Task_9.Users
 {
     public class User
     {
-        public int ID { get; set; }
-        public string Login { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
+        public int UserID { get; set; }
+        public string LastName { get; set; }
+        public string FirstName { get; set; }
         public string Email { get; set; }
-        public string Passw { get; set; }
-        public string Date { get; set; }
-        public string Role { get; set; }
+        public string Login { get; set; }
+        public string BirthDate { get; set; }
+        public string RegistrationDate { get; set; }
+        public string Password { get; set; }
 
         public User()
         {
-            this.ID = -1;
-            this.Login = null;
-            this.Name = null;
-            this.Surname = null;
-            this.Passw = null;
+            this.UserID = -1;
+            this.LastName = null;
+            this.FirstName = null;
             this.Email = null;
-            this.Date = null;
-            this.Role = null;
+            this.Login = null;
+            this.BirthDate = null;
+            this.RegistrationDate = null;
+            this.Password = null;
         }
 
-        public User(int id, string login, string nameUser, string surnameUser, string emailUser, string password, string dateUser, string role)
+        public User(int id, string lastname, string firstname, string email, string login, string birthdate, string regdata, string pass)
         {
-            this.ID = id;
+            this.UserID = id;
+            this.LastName = lastname;
+            this.FirstName = firstname;
+            this.Email = email;
             this.Login = login;
-            this.Name = nameUser;
-            this.Surname = surnameUser;
-            this.Passw = password;
-            this.Email = emailUser;
-            this.Date = dateUser;
-            this.Role = role;
+            this.BirthDate = birthdate;
+            this.RegistrationDate = regdata;
+            this.Password = pass;
         }
     }
 }
