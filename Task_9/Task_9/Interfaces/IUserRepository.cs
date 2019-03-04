@@ -7,9 +7,7 @@
     using System.Threading.Tasks;
     using Task_9.Users;
 
-    interface IUserRepository : IBaseRepository<User>
+    public interface IUserRepository : IBaseRepository<User>
     {
-
     }
-
 }

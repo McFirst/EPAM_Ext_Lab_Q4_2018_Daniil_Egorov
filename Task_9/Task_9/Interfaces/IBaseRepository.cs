@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Task_9.Interfaces
+﻿namespace Task_9.Interfaces
 {
-    interface IBaseRepository<T> where T : class, new()
+    using System.Collections.Generic;
+
+    public interface IBaseRepository<T> where T : class, new()
     {
         T Get(int id);
 
@@ -16,5 +12,4 @@ namespace Task_9.Interfaces
 
         bool Delete(int id);
     }
-
 }

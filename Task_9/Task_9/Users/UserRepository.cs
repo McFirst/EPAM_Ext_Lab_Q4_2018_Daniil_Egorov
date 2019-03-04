@@ -2,41 +2,35 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using Task_9.Interfaces;
     using System.Configuration;
-    using System.Data.Common;
     using System.Data;
-
-    class UserRepository : IUserRepository
+    using System.Data.Common;
+    using Task_9.Interfaces;
+    
+    public class UserRepository : IUserRepository
     {
-        private string DBConection;
+        private ConnectionStringSettings connectionStringItem;
 
-        public UserRepository(string ConectionString)
+        public UserRepository(ConnectionStringSettings conectionString)
         {
-            DBConection = ConectionString;
+            this.connectionStringItem = conectionString;
         }
 
         public bool Delete(int id)
         {
             bool result = false;
-            var connectionStringItem = ConfigurationManager.ConnectionStrings[DBConection];
-
-            if (connectionStringItem == null)
+            
+            if (this.connectionStringItem == null)
             {
-                //Console.WriteLine("Cannot find NorthwindConection in config.");
                 return false;
             }
 
-            var connectionString = connectionStringItem.ConnectionString;
-            var providerName = connectionStringItem.ProviderName;
+            var connectionString = this.connectionStringItem.ConnectionString;
+            var providerName = this.connectionStringItem.ProviderName;
             var factory = DbProviderFactories.GetFactory(providerName);
 
             using (IDbConnection connection = factory.CreateConnection())
             {
-
                 connection.ConnectionString = connectionString;
                 var command = connection.CreateCommand();
                 command.CommandText = "DELETE FROM [CardIndex].[dbo].[Users] WHERE [UserID] = " + id;
@@ -50,27 +44,25 @@
                     }
                 }
             }
+
             return result;
         }
 
         public User Get(int id)
         {
-            User GetUser = new User();
-            var connectionStringItem = ConfigurationManager.ConnectionStrings[DBConection];
-
-            if (connectionStringItem == null)
+            User getuser = new User();
+            
+            if (this.connectionStringItem == null)
             {
-                //Console.WriteLine("Cannot find NorthwindConection in config.");
-                return null; ;
+                return null;
             }
 
-            var connectionString = connectionStringItem.ConnectionString;
-            var providerName = connectionStringItem.ProviderName;
+            var connectionString = this.connectionStringItem.ConnectionString;
+            var providerName = this.connectionStringItem.ProviderName;
             var factory = DbProviderFactories.GetFactory(providerName);
 
             using (IDbConnection connection = factory.CreateConnection())
             {
-
                 connection.ConnectionString = connectionString;
                 var command = connection.CreateCommand();
                 command.CommandText = "SELECT [UserID],[LastName],[FirstName],[E-mail],[Login],[BirthDate],[RegistrationDate],[Password] "
@@ -79,42 +71,38 @@
                 connection.Open();
                 using (IDataReader reader = command.ExecuteReader())
                 {
-
-                        while (reader.Read())
-                        {
-                            GetUser.UserID = (int)reader["UserID"];
-                            GetUser.LastName = (string)reader["LastName"];
-                            GetUser.FirstName = (string)reader["FirstName"];
-                            GetUser.Email = (string)reader["E-mail"];
-                            GetUser.Login = (string)reader["Login"];
-                            GetUser.BirthDate = (string)reader["BirthDate"];
-                            GetUser.RegistrationDate = (string)reader["RegistrationDate"];
-                            GetUser.Password = (string)reader["Password"];
-                        }
-                    
+                    while (reader.Read())
+                    {
+                        getuser.UserID = (int)reader["UserID"];
+                        getuser.LastName = (string)reader["LastName"];
+                        getuser.FirstName = (string)reader["FirstName"];
+                        getuser.Email = (string)reader["E-mail"];
+                        getuser.Login = (string)reader["Login"];
+                        getuser.BirthDate = (DateTime)reader["BirthDate"];
+                        getuser.RegistrationDate = (DateTime)reader["RegistrationDate"];
+                        getuser.Password = (string)reader["Password"];
+                    }
                 }
             }
-            return GetUser;
+
+            return getuser;
         }
 
         public List<User> GetAll()
         {
-            List<User> UserList = new List<User>(3);
-            var connectionStringItem = ConfigurationManager.ConnectionStrings[DBConection];
-
-            if (connectionStringItem == null)
+            List<User> userlist = new List<User>(3);
+            
+            if (this.connectionStringItem == null)
             {
-                //Console.WriteLine("Cannot find NorthwindConection in config.");
-                return null; ;
+                return null;
             }
 
-            var connectionString = connectionStringItem.ConnectionString;
-            var providerName = connectionStringItem.ProviderName;
+            var connectionString = this.connectionStringItem.ConnectionString;
+            var providerName = this.connectionStringItem.ProviderName;
             var factory = DbProviderFactories.GetFactory(providerName);
 
             using (IDbConnection connection = factory.CreateConnection())
             {
-
                 connection.ConnectionString = connectionString;
                 var command = connection.CreateCommand();
                 command.CommandText = "SELECT [UserID],[LastName],[FirstName],[E-mail],[Login],[BirthDate],[RegistrationDate],[Password] "
@@ -123,52 +111,46 @@
                 connection.Open();
                 using (IDataReader reader = command.ExecuteReader())
                 {
-                    if (reader.RecordsAffected == 1)
-                    {
                         while (reader.Read())
                         {
-                            User GetUser = new User();
-                            GetUser.UserID = (int)reader["UserID"];
-                            GetUser.LastName = (string)reader["LastName"];
-                            GetUser.FirstName = (string)reader["FirstName"];
-                            GetUser.Email = (string)reader["E-mail"];
-                            GetUser.Login = (string)reader["Login"];
-                            GetUser.BirthDate = (string)reader["BirthDate"];
-                            GetUser.RegistrationDate = (string)reader["RegistrationDate"];
-                            GetUser.Password = (string)reader["Password"];
-                            UserList.Add(GetUser);
+                            User getuser = new User();
+                            getuser.UserID = (int)reader["UserID"];
+                            getuser.LastName = (string)reader["LastName"];
+                            getuser.FirstName = (string)reader["FirstName"];
+                            getuser.Email = (string)reader["E-mail"];
+                            getuser.Login = (string)reader["Login"];
+                            getuser.BirthDate = (DateTime)reader["BirthDate"];
+                            getuser.RegistrationDate = (DateTime)reader["RegistrationDate"];
+                            getuser.Password = (string)reader["Password"];
+                            userlist.Add(getuser);
                         }
-                    }
                 }
             }
-            return UserList;
+
+            return userlist;
         }
 
         public bool Save(User entity)
         {
             bool result = false;
-            var connectionStringItem = ConfigurationManager.ConnectionStrings[DBConection];
-
-            if (connectionStringItem == null)
+            
+            if (this.connectionStringItem == null)
             {
-                //Console.WriteLine("Cannot find NorthwindConection in config.");
                 return false;
             }
 
-            var connectionString = connectionStringItem.ConnectionString;
-            var providerName = connectionStringItem.ProviderName;
+            var connectionString = this.connectionStringItem.ConnectionString;
+            var providerName = this.connectionStringItem.ProviderName;
             var factory = DbProviderFactories.GetFactory(providerName);
 
             using (IDbConnection connection = factory.CreateConnection())
             {
-
                 connection.ConnectionString = connectionString;
                 var command = connection.CreateCommand();
                 command.CommandText = "INSERT INTO Users Values "
-                    + "(" + entity.UserID +","+entity.LastName+","+entity.FirstName + "," +entity.Email + "," + entity.Login
-                    + "," + entity.BirthDate + "," + entity.RegistrationDate + "," + entity.Password+")";
-                //"[UserID],[LastName],[FirstName],[E-mail],[Login],[BirthDate],[RegistrationDate],[Password]";
-
+                    + "(" + entity.UserID + ",N'" + entity.LastName + "',N'" + entity.FirstName + "',N'" + entity.Email + "',N'" + entity.Login
+                    + "','" + entity.BirthDate + "','" + entity.RegistrationDate + "',N'" + entity.Password + "')";
+                
                 connection.Open();
                 using (IDataReader reader = command.ExecuteReader())
                 {
@@ -178,8 +160,39 @@
                     }
                 }
             }
+
+            return result;
+        }
+
+        public int Count()
+        {
+            int result = 0;
+
+            if (this.connectionStringItem == null)
+            {
+                return result;
+            }
+
+            var connectionString = this.connectionStringItem.ConnectionString;
+            var providerName = this.connectionStringItem.ProviderName;
+            var factory = DbProviderFactories.GetFactory(providerName);
+
+            using (IDbConnection connection = factory.CreateConnection())
+            {
+                connection.ConnectionString = connectionString;
+                var command = connection.CreateCommand();
+                command.CommandText = "SELECT COUNT([UserID]) AS [COUNT] FROM [dbo].[Users] ";
+
+                connection.Open();
+                using (IDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        result = (int)reader["COUNT"];
+                    }
+                }
+            }
             return result;
         }
     }
-
 }
