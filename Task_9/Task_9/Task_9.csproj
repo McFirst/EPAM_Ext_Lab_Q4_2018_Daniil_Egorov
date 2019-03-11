@@ -51,10 +51,5 @@
     <Compile Include="Users\User.cs" />
     <Compile Include="Users\UserRepository.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
