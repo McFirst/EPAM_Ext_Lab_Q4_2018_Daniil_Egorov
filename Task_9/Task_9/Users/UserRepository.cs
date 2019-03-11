@@ -90,7 +90,7 @@
 
         public List<User> GetAll()
         {
-            List<User> userlist = new List<User>(3);
+            List<User> userlist = new List<User>;
             
             if (this.connectionStringItem == null)
             {
@@ -193,6 +193,46 @@
                 }
             }
             return result;
+        }
+
+        public List<User> GetAllByCount(int entity)
+        {
+            List<User> userlist = new List<User>();
+
+            if (this.connectionStringItem == null)
+            {
+                return null;
+            }
+
+            var connectionString = this.connectionStringItem.ConnectionString;
+            var providerName = this.connectionStringItem.ProviderName;
+            var factory = DbProviderFactories.GetFactory(providerName);
+
+            using (IDbConnection connection = factory.CreateConnection())
+            {
+                connection.ConnectionString = connectionString;
+                var command = connection.CreateCommand();
+                command.CommandText = "exec [dbo].[GetAllUsers] @amt="+entity;
+
+                connection.Open();
+                using (IDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        User getuser = new User();
+                        getuser.UserID = (int)reader["UserID"];
+                        getuser.LastName = (string)reader["LastName"];
+                        getuser.FirstName = (string)reader["FirstName"];
+                        getuser.Email = (string)reader["E-mail"];
+                        getuser.Login = (string)reader["Login"];
+                        getuser.BirthDate = (DateTime)reader["BirthDate"];
+                        getuser.RegistrationDate = (DateTime)reader["RegistrationDate"];
+                        getuser.Password = (string)reader["Password"];
+                        userlist.Add(getuser);
+                    }
+                }
+            }
+            return userlist;
         }
     }
 }
