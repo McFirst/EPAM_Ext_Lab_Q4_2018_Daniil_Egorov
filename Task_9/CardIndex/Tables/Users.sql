@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Users](
-	[UsersID] [int] NOT NULL,
+	[UserID] [int] NOT NULL,
 	[LastName] [nvarchar](50) NOT NULL,
 	[FirstName] [nvarchar](50) NOT NULL,
 	[E-mail] [nvarchar](50) NOT NULL,
@@ -9,6 +9,6 @@
 	[Password] [nvarchar](50) NOT NULL,
  CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED 
 (
-	[UsersID] ASC
+	[UserID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]

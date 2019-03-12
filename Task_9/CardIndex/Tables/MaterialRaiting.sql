@@ -17,7 +17,7 @@ GO
 ALTER TABLE [dbo].[MaterialRaiting] CHECK CONSTRAINT [FK_MaterialRaiting_Raitings]
 GO
 ALTER TABLE [dbo].[MaterialRaiting]  WITH CHECK ADD  CONSTRAINT [FK_MaterialRaiting_Users] FOREIGN KEY([MaterialID])
-REFERENCES [dbo].[Users] ([UsersID])
+REFERENCES [dbo].[Users] ([UserID])
 GO
 
 ALTER TABLE [dbo].[MaterialRaiting] CHECK CONSTRAINT [FK_MaterialRaiting_Users]

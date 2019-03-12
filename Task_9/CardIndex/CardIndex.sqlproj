@@ -113,7 +113,4 @@
     <Build Include="Stored Procedures\GetAllUsers.sql" />
     <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="CardIndex.publish.xml" />
-  </ItemGroup>
 </Project>

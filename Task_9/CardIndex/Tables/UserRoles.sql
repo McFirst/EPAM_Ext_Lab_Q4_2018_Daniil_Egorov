@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[UserRoles](
-	[UsersID] [int] NOT NULL,
+	[UserID] [int] NOT NULL,
 	[RoleID] [int] NOT NULL
 ) ON [PRIMARY]
 GO
@@ -9,8 +9,8 @@ GO
 
 ALTER TABLE [dbo].[UserRoles] CHECK CONSTRAINT [FK_UserRoles_Roles]
 GO
-ALTER TABLE [dbo].[UserRoles]  WITH CHECK ADD  CONSTRAINT [FK_UserRoles_Users] FOREIGN KEY([UsersID])
-REFERENCES [dbo].[Users] ([UsersID])
+ALTER TABLE [dbo].[UserRoles]  WITH CHECK ADD  CONSTRAINT [FK_UserRoles_Users] FOREIGN KEY([UserID])
+REFERENCES [dbo].[Users] ([UserID])
 GO
 
 ALTER TABLE [dbo].[UserRoles] CHECK CONSTRAINT [FK_UserRoles_Users]
