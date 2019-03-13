@@ -121,7 +121,6 @@
     <Build Include="Tables\Keys\FK_UserRoles_Roles.sql" />
     <Build Include="Tables\Keys\FK_UserRoles_Users.sql" />
   </ItemGroup>
-<<<<<<< HEAD
   <ItemGroup>
     <None Include="CardIndex.publish.xml" />
     <None Include="Tables\Keys\FK_MaterialRaiting_Materials.sql" />
@@ -129,6 +128,4 @@
   <ItemGroup>
     <RefactorLog Include="CardIndex.refactorlog" />
   </ItemGroup>
-=======
->>>>>>> 4301ea3575872b72eadb2bb7e754407a40b20ada
 </Project>
