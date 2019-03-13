@@ -3,6 +3,8 @@
     using System;
     using System.Collections.Generic;
     using System.Configuration;
+    using System.Data;
+    using System.Data.SqlClient;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Task_9.Users;
 
@@ -19,7 +21,7 @@
             // Arrange
             UserRepository urepo = new UserRepository(connectionStringItem);
             User usr = new User();
-            int id = 3;
+            int id = 8;
 
             // Act
             usr = urepo.Get(id);
@@ -58,12 +60,29 @@
         public void DeleteUser()
         {
             var connectionStringItem = ConfigurationManager.ConnectionStrings[DBConnectionString];
-
+            int id = 0;
+            
             // Arrange
             UserRepository urepo = new UserRepository(connectionStringItem);
+            using (var connection = new SqlConnection(connectionStringItem.ConnectionString))
+            {
+                connection.Open();
+                var command = connection.CreateCommand();
+                command.CommandText = "INSERT INTO [Users] (" + urepo.HeaderString("Users", true) + ") Values "
+                    + "(N'Adam',N'Sinkler',N'a.sinkler@mail.com',N'sadom','1966-05-05 00:00:00.000','1976-01-05 00:00:00.000',N'')";
+                command.ExecuteReader();
+            }
+            using (var connection = new SqlConnection(connectionStringItem.ConnectionString))
+            {
+                connection.Open();
+                var command = connection.CreateCommand();
+                command.CommandText = "SELECT [UserID] FROM [dbo].[Users] WHERE [E-mail]='a.sinkler@mail.com'";
+                id = (int)command.ExecuteScalar();
+
+            }
 
             // Act
-            bool result = urepo.Delete(10);
+            bool result = urepo.Delete(id);
 
             // Assert
             Assert.AreEqual(true, result, "Invalid delete");

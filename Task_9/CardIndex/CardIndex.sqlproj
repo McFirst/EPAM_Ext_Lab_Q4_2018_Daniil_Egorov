@@ -100,6 +100,8 @@
     <Folder Include="Tables\" />
     <Folder Include="Stored Procedures\" />
     <Folder Include="Scripts\" />
+    <Folder Include="Scripts\Post-Deployment" />
+    <Folder Include="Tables\Keys" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\MaterialRaiting.sql" />
@@ -111,6 +113,22 @@
     <Build Include="Tables\UserRoles.sql" />
     <Build Include="Tables\Users.sql" />
     <Build Include="Stored Procedures\GetAllUsers.sql" />
-    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+    <None Include="Scripts\Post-Deployment\ScriptsIgnoredOnImport.sql" />
+    <Build Include="Tables\Keys\FK_MaterialRaiting_Raitings.sql" />
+    <Build Include="Tables\Keys\FK_MaterialRaiting_Users.sql" />
+    <Build Include="Tables\Keys\FK_MaterialTag_Materials.sql" />
+    <Build Include="Tables\Keys\FK_MaterialTag_Tags.sql" />
+    <Build Include="Tables\Keys\FK_UserRoles_Roles.sql" />
+    <Build Include="Tables\Keys\FK_UserRoles_Users.sql" />
   </ItemGroup>
+<<<<<<< HEAD
+  <ItemGroup>
+    <None Include="CardIndex.publish.xml" />
+    <None Include="Tables\Keys\FK_MaterialRaiting_Materials.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="CardIndex.refactorlog" />
+  </ItemGroup>
+=======
+>>>>>>> 4301ea3575872b72eadb2bb7e754407a40b20ada
 </Project>
